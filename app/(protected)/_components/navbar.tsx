@@ -10,8 +10,8 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-secondary flex justify-between items-center p-4 w-full shadow-sm fixed top-0 z-10">
-      <div className="flex gap-x-2">
+    <nav className="bg-secondary flex justify-end items-center p-4 w-full shadow-sm fixed top-0 z-10">
+      {/* <div className="flex gap-x-2">
         <Button 
           asChild
           variant={pathname === "/server" ? "default" : "outline"}
@@ -44,7 +44,7 @@ export const Navbar = () => {
             Settings
           </Link>
         </Button>
-      </div>
+      </div> */}
       <UserButton />
     </nav>
   );
