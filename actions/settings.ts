@@ -30,6 +30,7 @@ export const settings = async (
     values.email = undefined;
     values.password = undefined;
     values.newPassword = undefined;
+    values.checkPassword = undefined;
     values.isTwoFactorEnabled = undefined;
   }
 
@@ -51,22 +52,28 @@ export const settings = async (
     return { success: "Verification email sent!" };
   }
 
-  if (values.password && values.newPassword && dbUser.password) {
-    const passwordsMatch = await bcrypt.compare(
-      values.password,
-      dbUser.password,
-    );
+  if (values.newPassword && values.checkPassword && values.newPassword === values.checkPassword) {
 
-    if (!passwordsMatch) {
-      return { error: "Incorrect password!" };
+    if (values.password && values.newPassword && dbUser.password) {
+      const passwordsMatch = await bcrypt.compare(
+        values.password,
+        dbUser.password,
+      );
+
+      if (!passwordsMatch) {
+        return { error: "Incorrect password!" };
+      }
+
+      const hashedPassword = await bcrypt.hash(
+        values.newPassword,
+        10,
+      );
+      values.password = hashedPassword;
+      values.newPassword = undefined;
     }
-
-    const hashedPassword = await bcrypt.hash(
-      values.newPassword,
-      10,
-    );
-    values.password = hashedPassword;
-    values.newPassword = undefined;
+  }
+  else {
+    return { error: "New password not matching!" };
   }
 
   const updatedUser = await db.user.update({

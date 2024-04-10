@@ -39,6 +39,8 @@ export const login = async (
     return { error: "Email does not exist!" }
   }
 
+  console.log(new Date());
+
   if (!existingUser.emailVerified) {
     const verificationToken = await generateVerificationToken(
       existingUser.email,

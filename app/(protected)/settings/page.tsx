@@ -161,6 +161,24 @@ const SettingsPage = () => {
                       </FormItem>
                     )}
                   />
+                  <FormField
+                    control={form.control}
+                    name="checkPassword"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Password Check</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            placeholder="******"
+                            type="password"
+                            disabled={isPending}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
                 </>
               )}
               <FormField
