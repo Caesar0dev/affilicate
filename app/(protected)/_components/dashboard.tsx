@@ -8,16 +8,17 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@/components/auth/user-button";
 import { clsx } from 'clsx/lite'
 
-import { HomeIcon } from "@radix-ui/react-icons";
+import { HomeIcon, Link2Icon, PieChartIcon, BarChartIcon} from "@radix-ui/react-icons";
 interface ProtectedLayoutProps {
   children: React.ReactNode;
 };
 
 export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 	const pathname = usePathname();
+
 	return (
-		<>
-			<div className="bg-gray-800 text-white  h-screen w-32 left-0 top-0 z-20 fixed gap-y-2">
+		<div className="h-screen w-full flex flex-row">
+			<div className="bg-gray-800 text-white  h-screen w-40 z-20 gap-y-2">
 				<div className="my-4 mx-2">
 					<h3 className="text-xl">Affilicate</h3>
 				</div>
@@ -30,7 +31,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 					</Link>
 					<Link href="/client">
 						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
-							<HomeIcon />
+							<Link2Icon />
 							<div className="flex-grow">
 								Client
 							</div>
@@ -38,7 +39,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 					</Link>
 					<Link href="/admin">
 						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
-							<HomeIcon />
+							<PieChartIcon />
 							<div className="flex-grow">
 								Admin
 							</div>
@@ -46,7 +47,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 					</Link>
 					<Link href="/settings">
 						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
-							<HomeIcon />
+							<BarChartIcon />
 							<div className="flex-grow">
 								Settings
 							</div>
@@ -55,7 +56,9 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 				</div>
 			</div>
 			<Navbar />
-			{children}
-    </>
+			<div className="flex-grow gap-y-10 h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800 grid place-items-center overflow-y-auto">
+				{children}
+			</div>
+    </div>
   );
 };
