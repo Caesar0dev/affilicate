@@ -26,6 +26,12 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
             </Link>
           </div>
           <div className="hover:bg-gray-800 px-3 py-2">
+            <Link href="/urls" className="flex flex-row space-x-2 items-center">
+              <BarChartIcon />
+              <div className="flex-grow">Affiliate URLs</div>
+            </Link>
+          </div>
+          <div className="hover:bg-gray-800 px-3 py-2">
             <Link href="/server" className="flex flex-row space-x-2 items-center">
               <HomeIcon />
               <div className="flex-grow">Server</div>
