@@ -4,12 +4,11 @@ import { UserInfo } from "@/components/user-info";
 const ServerPage = async () => {
   const user = await currentUser();
 
-  return ( 
-    <UserInfo
-      label="💻 Server component"
-      user={user}
-    />
-   );
-}
- 
+  return (
+    <div className="m-auto">
+      <UserInfo label="💻 Server component" user={user} />
+    </div>
+  );
+};
+
 export default ServerPage;
