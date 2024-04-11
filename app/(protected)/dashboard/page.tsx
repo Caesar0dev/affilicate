@@ -3,24 +3,48 @@ import { UserInfo } from "@/components/user-info";
 import Card1 from '@/components/dashboard/Card1'
 import { DashboardIcon } from '@radix-ui/react-icons'
 
-const Card1Data = [
+const Last30 = [
   {
     icon: <DashboardIcon width={30} height={30}  />,
     title: 'Referrals',
     amount: 9,
-    rate: 55.6
+    rate: 55.6,
+    view: true,
   },
   {
     icon: <DashboardIcon width={30} height={30} />,
-    title: 'Referrals',
-    amount: 9,
-    rate: 55.6
+    title: 'Visits',
+    amount: 156,
+    rate: -9.8,
+    view: true,
   },
   {
     icon: <DashboardIcon width={30} height={30} />,
+    title: 'Conversion Rate',
+    amount: 5.77,
+    rate: 59.6,
+    view: false,
+  }
+]
+
+const AllTime = [
+  {
+    icon: <DashboardIcon width={30} height={30}  />,
     title: 'Referrals',
     amount: 9,
-    rate: 55.6
+    view: true,
+  },
+  {
+    icon: <DashboardIcon width={30} height={30} />,
+    title: 'Visits',
+    amount: 156,
+    view: true,
+  },
+  {
+    icon: <DashboardIcon width={30} height={30} />,
+    title: 'Conversion Rate',
+    amount: 5.77,
+    view: false,
   }
 ]
 
@@ -29,14 +53,20 @@ const ServerPage = async () => {
 
   return ( 
     <div className='space-y-6'>
-      <div>Welcome Andrew</div>
+      <div className="px-4 mt-4 md:px-6 text-2xl font-bold">Welcome Andrew</div>
+      
       <div className="space-y-2 px-4 md:px-6">
-        <div className="text-sm">Last 30 days</div>
+        <div className="font-bold">Last 30 days</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {
-            Card1Data.map((data, i) => <Card1 icon={data.icon} amount={data.amount} rate={data.rate} title={data.title} key={i} />)
-          }
+          { Last30.map((data, i) => <Card1 key={i} icon={data.icon} amount={data.amount} rate={data.rate} title={data.title} view={data.view} />) }
+        </div>
       </div>
+
+      <div className="space-y-2 px-4 md:px-6">
+        <div className="font-bold">All-time</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          { AllTime.map((data, i) => <Card1 key={i} icon={data.icon} amount={data.amount} title={data.title} view={data.view} />) }
+        </div>
       </div>
     </div>
    );
