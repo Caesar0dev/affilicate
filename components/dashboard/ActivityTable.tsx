@@ -38,7 +38,7 @@ export default function ActivityTable({ data }: any) {
             <TableCell>{row.amount}</TableCell>
             <TableCell>{row.description}</TableCell>
             <TableCell>
-              <Badge>{row.status}</Badge>
+              <Badge variant={'success'} >{row.status}</Badge>
             </TableCell>
             <TableCell className="text-right">{row.date.toISOString().slice(0, 10)}</TableCell>
           </TableRow>

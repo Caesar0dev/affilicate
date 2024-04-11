@@ -71,21 +71,21 @@ const activity = [
     reference: 23945,
     amount: 304.8,
     description: 'My Test Product 1',
-    status: 'upload',
+    status: 'unpaid',
     date: new Date()
   },
   {
     reference: 234.41,
     amount: 521.45,
     description: 'My Test Product 2',
-    status: 'upload',
+    status: 'unpaid',
     date: new Date()
   },
   {
     reference: 4895,
     amount: 531.041,
     description: 'My Test Product 3',
-    status: 'upload',
+    status: 'unpaid',
     date: new Date()
   }
 ]
