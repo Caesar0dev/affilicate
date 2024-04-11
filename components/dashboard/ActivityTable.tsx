@@ -66,7 +66,7 @@ const invoices = [
 export default function ActivityTable({ reference, amount, description, status, date  }: ActivityType) {
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Invoice</TableHead>
@@ -75,7 +75,7 @@ export default function ActivityTable({ reference, amount, description, status, 
           <TableHead className="text-right">Amount</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody>
+      {/* <TableBody>
         {invoices.map((invoice) => (
           <TableRow key={invoice.invoice}>
             <TableCell className="font-medium">{invoice.invoice}</TableCell>
@@ -84,7 +84,7 @@ export default function ActivityTable({ reference, amount, description, status, 
             <TableCell className="text-right">{invoice.totalAmount}</TableCell>
           </TableRow>
         ))}
-      </TableBody>
+      </TableBody> */}
       <TableFooter>
         <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
