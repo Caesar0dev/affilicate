@@ -17,7 +17,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 	const pathname = usePathname();
 
 	return (
-		<div className="h-screen w-full flex flex-row overflow-hidden">
+		<div className="h-full w-full flex flex-row overflow-hidden">
 			<div className="bg-gray-800 text-white h-screen w-40 gap-y-2">
 				<div className="my-4 mx-2">
 					<h3 className="text-xl">Affilicate</h3>
@@ -55,7 +55,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 					</Link>
 				</div>
 			</div>
-			<div className="flex-grow gap-y-10 h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800 overflow-hidden">
+			<div className="flex-grow gap-y-10 h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800 overflow-hidden">
 				<div className="w-full">
 					<Navbar />
 				</div>

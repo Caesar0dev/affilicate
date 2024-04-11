@@ -7,7 +7,9 @@ interface ProtectedLayoutProps {
 
 const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
   return ( 
-    <Dashboard children={children} />
+    <div className='h-full'>
+      <Dashboard children={children} />
+    </div>
    );
 }
  
