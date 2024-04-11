@@ -18,12 +18,12 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
 	return (
 		<div className="h-full w-full flex flex-row overflow-hidden">
-			<div className="bg-gray-700 text-white h-screen w-40 gap-y-2">
+			<div className="bg-gray-700 text-white h-screen w-40 space-y-4">
 				<div className="w-full bg-gray-800 px-2 py-4">
 					<h3 className="text-xl">Affilicate</h3>
 				</div>
-				<div className="space-y-6 p-3 [&>a]:hover:bg-gray-700">
-					<div>
+				<div className="py-3">
+					<div className="hover:bg-gray-800 px-3 py-2">
 						<Link href="/server" className="flex flex-row space-x-2 items-center">
 							<HomeIcon />
 							<div className="flex-grow">Server</div>
