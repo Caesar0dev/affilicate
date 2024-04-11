@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@/components/auth/user-button";
 import { clsx } from 'clsx/lite'
 
-import { HomeIcon, Link2Icon, PieChartIcon, BarChartIcon} from "@radix-ui/react-icons";
+import { HomeIcon, Link2Icon, PieChartIcon, BarChartIcon, DashboardIcon} from "@radix-ui/react-icons";
 interface ProtectedLayoutProps {
   children: React.ReactNode;
 };
@@ -45,22 +45,22 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 							</div>
 						</div>
 					</Link>
-					<Link href="/settings">
-						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
+					<div>
+						<Link href="/settings" className="flex flex-row space-x-2 items-center">
 							<BarChartIcon />
 							<div className="flex-grow">
 								Settings
 							</div>
-						</div>
-					</Link>
-					<Link href="/dashboard">
-						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
-							<BarChartIcon />
+						</Link>
+					</div>
+					<div>
+						<Link href="/dashboard" className="flex flex-row space-x-2 items-center">
+							<DashboardIcon />
 							<div className="flex-grow">
 								Dashboard
 							</div>
-						</div>
-					</Link>
+						</Link>
+					</div>
 				</div>
 			</div>
 			<div className="flex-grow gap-y-10 h-full overflow-hidden">
