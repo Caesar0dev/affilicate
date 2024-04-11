@@ -30,36 +30,49 @@ const Urls = async () => {
   const user = await currentUser();
 
   return (
-    <div className="space-y-10 py-8 px-4 md:px-6">
+    <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">Affiliate URLs</div>
 
       <div className="grid grid-cols-3 gap-8">
         <div className="col-span-1">
-          <div>Referral URL</div>
-          <div>Share your referral URL with your audience to earn commission.</div>
+          <div className="text-xl font-medium">Referral URL</div>
+          <p className="text-sm">Share your referral URL with your audience to earn commission.</p>
         </div>
-        {/* <div className="col-span-2">
-          <Card className="h-full">
+        <div className="col-span-2">
+          <Card className="">
             <CardHeader>
               <Input type="text" defaultValue={"http://localhost/"} />
             </CardHeader>
           </Card>
-        </div> */}
+        </div>
       </div>
 
-      {/* <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3">
         <div className="col-span-1">
-          <div>Referral URL generator</div>
-          <div>Use this form to generate a referral link.</div>
+          <div className="text-xl font-medium">Referral URL generator</div>
+          <p className="text-sm">Use this form to generate a referral link.</p>
         </div>
         <div className="col-span-2">
           <Card className="h-full">
-            <CardHeader>
-              <Input type="text" defaultValue={"http://localhost/"} />
+            <CardHeader className="space-y-6">
+              <div className="space-y-1">
+                <div>Page URL</div>
+                <Input type="text" defaultValue={"http://localhost/"} />
+              </div>
+              <div className="space-y-1">
+                <div>Campaign name</div>
+                <p>Enter an optional campaign name to help track performance.</p>
+                <Input type="text" defaultValue={"http://localhost/"} />
+              </div>
+              <div className="space-y-1">
+                <div>Generated referral URL</div>
+                <p>Share this URL with your audience.</p>
+                <Input type="text" defaultValue={"http://localhost/"} />
+              </div>
             </CardHeader>
           </Card>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
