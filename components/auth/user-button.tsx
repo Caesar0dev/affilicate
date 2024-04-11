@@ -1,19 +1,14 @@
 "use client";
 
 import { FaUser } from "react-icons/fa";
-import { EnterIcon, ExitIcon } from "@radix-ui/react-icons"
-
+import { EnterIcon, ExitIcon } from "@radix-ui/react-icons";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-import {
-  Avatar,
-  AvatarImage,
-  AvatarFallback,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { LogoutButton } from "@/components/auth/logout-button";
 import { SignUpButton } from "@/components/auth/signup-button";
@@ -32,18 +27,21 @@ export const UserButton = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
-        <SignUpButton>
-          <DropdownMenuItem>
-            <EnterIcon className="h-4 w-4 mr-2" />
-            Sign Up
-          </DropdownMenuItem>
-        </SignUpButton>
-        <LogoutButton>
-          <DropdownMenuItem>
-            <ExitIcon className="h-4 w-4 mr-2" />
-            Logout
-          </DropdownMenuItem>
-        </LogoutButton>
+        {user ? (
+          <LogoutButton>
+            <DropdownMenuItem>
+              <ExitIcon className="h-4 w-4 mr-2" />
+              Logout
+            </DropdownMenuItem>
+          </LogoutButton>
+        ) : (
+          <SignUpButton>
+            <DropdownMenuItem>
+              <EnterIcon className="h-4 w-4 mr-2" />
+              Sign Up
+            </DropdownMenuItem>
+          </SignUpButton>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );
