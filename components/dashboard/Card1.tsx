@@ -13,7 +13,7 @@ interface Card1Type {
 
 export default function Card1({ icon, title, amount, rate, view  }: Card1Type) {
   return (
-    <div className="bg-gray-50 rounded-lg overflow-hidden">
+    <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
       <div className="p-4 flex flex-row w-full space-x-4 items-center">
         <div>{icon}</div>
         <div>

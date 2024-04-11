@@ -54,8 +54,14 @@ const AllTime = [
   },
   {
     icon: <DashboardIcon width={30} height={30} />,
-    title: 'Paid Referrals',
-    amount: 170,
+    title: 'Unpaid Earnings',
+    amount: '$497.25',
+    view: false,
+  },
+  {
+    icon: <DashboardIcon width={30} height={30} />,
+    title: 'Total Earnings',
+    amount: '$7876.17',
     view: false,
   }
 ]
@@ -64,8 +70,8 @@ const ServerPage = async () => {
   const user = await currentUser();
 
   return ( 
-    <div className='space-y-6'>
-      <div className="px-4 mt-4 md:px-6 text-2xl font-bold">Welcome Andrew</div>
+    <div className='space-y-6 py-4'>
+      <div className="px-4 md:px-6 text-2xl font-bold">Welcome Andrew</div>
       
       <div className="space-y-2 px-4 md:px-6">
         <div className="font-bold">Last 30 days</div>
