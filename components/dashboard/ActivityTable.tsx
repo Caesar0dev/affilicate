@@ -24,25 +24,29 @@ export default function ActivityTable({ data }: any) {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          <TableHead className="w-[100px]">Reference</TableHead>
+          <TableHead>Amount</TableHead>
+          <TableHead>description</TableHead>
+          <TableHead>status</TableHead>
+          <TableHead className="text-right">Date</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row, i) => (
+        {data.map((row : any, i: number) => (
           <TableRow key={i}>
-            <TableCell className="font-medium">{row.row}</TableCell>
-            <TableCell>{row.paymentStatus}</TableCell>
-            <TableCell>{row.paymentMethod}</TableCell>
-            <TableCell className="text-right">{row.totalAmount}</TableCell>
+            <TableCell className="font-medium">{row.reference}</TableCell>
+            <TableCell>{row.amount}</TableCell>
+            <TableCell>{row.description}</TableCell>
+            <TableCell>
+              <Badge>{row.status}</Badge>
+            </TableCell>
+            <TableCell className="text-right">{row.date.toISOString().slice(0, 10)}</TableCell>
           </TableRow>
         ))}
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
+          <TableCell colSpan={4}>Total</TableCell>
           <TableCell className="text-right">$2,500.00</TableCell>
         </TableRow>
       </TableFooter>
