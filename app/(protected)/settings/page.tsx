@@ -75,7 +75,7 @@ const SettingsPage = () => {
   }
 
   return ( 
-    <Card className="w-[600px] h-screen overflow-y-auto">
+    <Card className="w-[600px] mt-6 mb-20">
       <CardHeader>
         <p className="text-2xl font-semibold text-center">
           ⚙️ Settings
