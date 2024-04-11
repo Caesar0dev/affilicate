@@ -2,30 +2,6 @@ import { currentUser } from "@/lib/auth";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
-const activity = [
-  {
-    reference: 23945,
-    amount: 304.8,
-    description: "My Test Product 1",
-    status: "unpaid",
-    date: new Date()
-  },
-  {
-    reference: 234.41,
-    amount: 521.45,
-    description: "My Test Product 2",
-    status: "unpaid",
-    date: new Date()
-  },
-  {
-    reference: 4895,
-    amount: 531.041,
-    description: "My Test Product 3",
-    status: "unpaid",
-    date: new Date()
-  }
-];
-
 const Urls = async () => {
   const user = await currentUser();
 
