@@ -23,28 +23,28 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 					<h3 className="text-xl">Affilicate</h3>
 				</div>
 				<div className="space-y-6 p-3 [&>a]:hover:bg-gray-700">
-					<Link href="/server">
-						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
+					<div>
+						<Link href="/server" className="flex flex-row space-x-2 items-center">
 							<HomeIcon />
 							<div className="flex-grow">Server</div>
-						</div>
-					</Link>
-					<Link href="/client">
-						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
+						</Link>
+					</div>
+					<div>
+						<Link href="/client" className="flex flex-row space-x-2 items-center">
 							<Link2Icon />
 							<div className="flex-grow">
 								Client
 							</div>
-						</div>
-					</Link>
-					<Link href="/admin">
-						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
+						</Link>
+					</div>
+					<div>
+						<Link href="/admin" className="flex flex-row space-x-2 items-center">
 							<PieChartIcon />
 							<div className="flex-grow">
 								Admin
 							</div>
-						</div>
-					</Link>
+						</Link>
+					</div>
 					<div>
 						<Link href="/settings" className="flex flex-row space-x-2 items-center">
 							<BarChartIcon />
