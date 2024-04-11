@@ -31,19 +31,31 @@ const AllTime = [
   {
     icon: <DashboardIcon width={30} height={30}  />,
     title: 'Referrals',
-    amount: 9,
+    amount: 181,
     view: true,
   },
   {
     icon: <DashboardIcon width={30} height={30} />,
     title: 'Visits',
-    amount: 156,
+    amount: 4100,
     view: true,
   },
   {
     icon: <DashboardIcon width={30} height={30} />,
     title: 'Conversion Rate',
-    amount: 5.77,
+    amount: "4.41%",
+    view: false,
+  },
+  {
+    icon: <DashboardIcon width={30} height={30} />,
+    title: 'Paid Referrals',
+    amount: 170,
+    view: true,
+  },
+  {
+    icon: <DashboardIcon width={30} height={30} />,
+    title: 'Paid Referrals',
+    amount: 170,
     view: false,
   }
 ]

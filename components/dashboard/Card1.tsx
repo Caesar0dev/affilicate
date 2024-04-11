@@ -6,7 +6,7 @@ import { ArrowUpIcon, ArrowDownIcon } from '@radix-ui/react-icons'
 interface Card1Type {
   icon: any;
   title: string;
-  amount: number;
+  amount: number | string;
   rate?: number;
   view: boolean;
 };
