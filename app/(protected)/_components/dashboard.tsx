@@ -24,6 +24,14 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 				</div>
 				<div>
 					<div className="hover:bg-gray-800 px-3 py-2">
+						<Link href="/dashboard" className="flex flex-row space-x-2 items-center">
+							<DashboardIcon />
+							<div className="flex-grow">
+								Dashboard
+							</div>
+						</Link>
+					</div>
+					<div className="hover:bg-gray-800 px-3 py-2">
 						<Link href="/server" className="flex flex-row space-x-2 items-center">
 							<HomeIcon />
 							<div className="flex-grow">Server</div>
@@ -50,14 +58,6 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 							<BarChartIcon />
 							<div className="flex-grow">
 								Settings
-							</div>
-						</Link>
-					</div>
-					<div className="hover:bg-gray-800 px-3 py-2">
-						<Link href="/dashboard" className="flex flex-row space-x-2 items-center">
-							<DashboardIcon />
-							<div className="flex-grow">
-								Dashboard
 							</div>
 						</Link>
 					</div>

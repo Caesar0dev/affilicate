@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui/badge'
+import { Badge } from "@/components/ui/badge";
 import {
   Table,
   TableBody,
@@ -7,8 +7,8 @@ import {
   TableFooter,
   TableHead,
   TableHeader,
-  TableRow,
-} from "@/components/ui/table"
+  TableRow
+} from "@/components/ui/table";
 
 interface ActivityType {
   reference: number;
@@ -16,8 +16,7 @@ interface ActivityType {
   description: string;
   status: string;
   date: Date;
-};
-
+}
 
 export default function ActivityTable({ data }: any) {
   return (
@@ -32,13 +31,13 @@ export default function ActivityTable({ data }: any) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row : any, i: number) => (
+        {data.map((row: any, i: number) => (
           <TableRow key={i}>
             <TableCell className="font-medium">{row.reference}</TableCell>
             <TableCell>{row.amount}</TableCell>
             <TableCell>{row.description}</TableCell>
             <TableCell>
-              <Badge variant={'success'} >{row.status}</Badge>
+              <Badge variant={"success"}>{row.status}</Badge>
             </TableCell>
             <TableCell className="text-right">{row.date.toISOString().slice(0, 10)}</TableCell>
           </TableRow>
@@ -51,5 +50,5 @@ export default function ActivityTable({ data }: any) {
         </TableRow>
       </TableFooter>
     </Table>
-  )
+  );
 }
