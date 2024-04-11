@@ -1,7 +1,4 @@
-import {FC} from 'react'
-import { Button } from '@/components/ui/button'
-import { clsx } from 'clsx/lite'
-import { ArrowUpIcon, ArrowDownIcon } from '@radix-ui/react-icons'
+import { Badge } from '@/components/ui/badge'
 import {
   Table,
   TableBody,
@@ -15,7 +12,7 @@ import {
 
 interface ActivityType {
   reference: number;
-  amount: string;
+  amount: number;
   description: string;
   status: string;
   date: Date;
@@ -65,7 +62,6 @@ const invoices = [
     paymentMethod: "Credit Card",
   },
 ]
-
 
 export default function ActivityTable({ reference, amount, description, status, date  }: ActivityType) {
   return (

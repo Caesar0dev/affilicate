@@ -1,7 +1,7 @@
 import { currentUser } from "@/lib/auth";
-import { UserInfo } from "@/components/user-info";
-import Card1 from '@/components/dashboard/Card1'
 import { DashboardIcon } from '@radix-ui/react-icons'
+import ActivityTable from "@/components/dashboard/ActivityTable";
+import Card1 from '@/components/dashboard/Card1'
 
 const Last30 = [
   {
@@ -66,6 +66,30 @@ const AllTime = [
   }
 ]
 
+const activity = [
+  {
+    reference: 23945,
+    amount: 304.8,
+    description: 'My Test Product 1',
+    status: 'upload',
+    date: new Date()
+  },
+  {
+    reference: 234.41,
+    amount: 521.45,
+    description: 'My Test Product 2',
+    status: 'upload',
+    date: new Date()
+  },
+  {
+    reference: 4895,
+    amount: 531.041,
+    description: 'My Test Product 3',
+    status: 'upload',
+    date: new Date()
+  }
+]
+
 const ServerPage = async () => {
   const user = await currentUser();
 
@@ -89,8 +113,8 @@ const ServerPage = async () => {
 
       <div className="space-y-4">
         <div className="font-bold text-xl">Recent referrals activity</div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          { AllTime.map((data, i) => <Card1 key={i} icon={data.icon} amount={data.amount} title={data.title} view={data.view} />) }
+        <div>
+          { activity.map((data, i) => <ActivityTable key={i} reference={data.reference} amount={data.amount} description={data.description} status={data.status} date={data.date} />) }
         </div>
       </div>
     </div>
