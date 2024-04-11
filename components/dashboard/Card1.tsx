@@ -1,10 +1,11 @@
 import { DashboardIcon } from '@radix-ui/react-icons'
+import { Button } from '@/components/ui/button'
 
 export default function Card1() {
   return (
     <div className="bg-gray-50 rounded-lg overflow-hidden">
-      <div className="p-4 flex flex-row w-full space-x-4">
-        <div><DashboardIcon /></div>
+      <div className="p-4 flex flex-row w-full space-x-4 items-center">
+        <div><DashboardIcon width={30} height={30} /></div>
         <div>
           <p>Referrals</p>
           <div className="flex flex-row w-full space-x-2 items-end">
@@ -16,7 +17,7 @@ export default function Card1() {
           </div>
         </div>
       </div>
-      <div className="p-4 bg-gray-200 text-purple-600">View all</div>
+      <Button variant={'secondary'} className='w-full text-purple-600 bg-gray-200 flex justify-start'>View all</Button>
     </div>
   )
 }

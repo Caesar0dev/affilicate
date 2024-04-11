@@ -8,7 +8,7 @@ const ServerPage = async () => {
   return ( 
     <div className='space-y-6'>
       <div>Welcome Andrew</div>
-      <div className="space-y-2 md:px-6">
+      <div className="space-y-2 px-4 md:px-6">
         <div className="text-sm">Last 30 days</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card1 />
