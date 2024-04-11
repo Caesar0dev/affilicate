@@ -31,7 +31,7 @@ export const sendPasswordResetEmail = async (
 };
 
 export const sendVerificationEmail = async (
-  email: string, 
+  email: string,
   token: string
 ) => {
   const confirmLink = `${domain}/auth/new-verification?token=${token}`;
