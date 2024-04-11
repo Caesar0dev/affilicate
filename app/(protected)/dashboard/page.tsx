@@ -114,7 +114,7 @@ const ServerPage = async () => {
       <div className="space-y-4">
         <div className="font-bold text-xl">Recent referrals activity</div>
         <div>
-          { activity.map((data, i) => <ActivityTable key={i} reference={data.reference} amount={data.amount} description={data.description} status={data.status} date={data.date} />) }
+           <ActivityTable data={activity} />
         </div>
       </div>
     </div>
