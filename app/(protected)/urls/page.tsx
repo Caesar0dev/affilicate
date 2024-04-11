@@ -38,6 +38,20 @@ const Urls = async () => {
           <div>Referral URL</div>
           <div>Share your referral URL with your audience to earn commission.</div>
         </div>
+        {/* <div className="col-span-2">
+          <Card className="h-full">
+            <CardHeader>
+              <Input type="text" defaultValue={"http://localhost/"} />
+            </CardHeader>
+          </Card>
+        </div> */}
+      </div>
+
+      {/* <div className="grid grid-cols-3">
+        <div className="col-span-1">
+          <div>Referral URL generator</div>
+          <div>Use this form to generate a referral link.</div>
+        </div>
         <div className="col-span-2">
           <Card className="h-full">
             <CardHeader>
@@ -45,17 +59,7 @@ const Urls = async () => {
             </CardHeader>
           </Card>
         </div>
-      </div>
-
-      <div className="grid grid-cols-3">
-        <div className="col-span-1">
-          <div>Referral URL generator</div>
-          <div>Use this form to generate a referral link.</div>
-        </div>
-        <div className="col-span-2">
-          <div></div>
-        </div>
-      </div>
+      </div> */}
     </div>
   );
 };
