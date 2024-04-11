@@ -22,14 +22,14 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 				<div className="w-full bg-gray-800 px-2 py-4">
 					<h3 className="text-xl">Affilicate</h3>
 				</div>
-				<div className="py-3">
+				<div>
 					<div className="hover:bg-gray-800 px-3 py-2">
 						<Link href="/server" className="flex flex-row space-x-2 items-center">
 							<HomeIcon />
 							<div className="flex-grow">Server</div>
 						</Link>
 					</div>
-					<div>
+					<div className="hover:bg-gray-800 px-3 py-2">
 						<Link href="/client" className="flex flex-row space-x-2 items-center">
 							<Link2Icon />
 							<div className="flex-grow">
@@ -37,7 +37,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 							</div>
 						</Link>
 					</div>
-					<div>
+					<div className="hover:bg-gray-800 px-3 py-2">
 						<Link href="/admin" className="flex flex-row space-x-2 items-center">
 							<PieChartIcon />
 							<div className="flex-grow">
@@ -45,7 +45,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 							</div>
 						</Link>
 					</div>
-					<div>
+					<div className="hover:bg-gray-800 px-3 py-2">
 						<Link href="/settings" className="flex flex-row space-x-2 items-center">
 							<BarChartIcon />
 							<div className="flex-grow">
@@ -53,7 +53,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 							</div>
 						</Link>
 					</div>
-					<div>
+					<div className="hover:bg-gray-800 px-3 py-2">
 						<Link href="/dashboard" className="flex flex-row space-x-2 items-center">
 							<DashboardIcon />
 							<div className="flex-grow">
