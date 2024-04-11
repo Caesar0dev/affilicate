@@ -18,11 +18,11 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
 	return (
 		<div className="h-full w-full flex flex-row overflow-hidden">
-			<div className="bg-gray-800 text-white h-screen w-40 gap-y-2">
-				<div className="my-4 mx-2">
+			<div className="bg-gray-700 text-white h-screen w-40 gap-y-2">
+				<div className="w-full bg-gray-800 px-2 py-4">
 					<h3 className="text-xl">Affilicate</h3>
 				</div>
-				<div className="space-y-6 mx-2 my-3 [&>a]:hover:bg-gray-700">
+				<div className="space-y-6 p-3 [&>a]:hover:bg-gray-700">
 					<Link href="/server">
 						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
 							<HomeIcon />
@@ -53,13 +53,21 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 							</div>
 						</div>
 					</Link>
+					<Link href="/dashboard">
+						<div className={clsx('w-full mt-2 flex flex-row space-x-2 items-center')}>
+							<BarChartIcon />
+							<div className="flex-grow">
+								Dashboard
+							</div>
+						</div>
+					</Link>
 				</div>
 			</div>
 			<div className="flex-grow gap-y-10 h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800 overflow-hidden">
 				<div className="w-full">
 					<Navbar />
 				</div>
-				<div className="grid h-[calc(100vh-56px)] place-items-center overflow-y-auto">
+				<div className="grid h-[calc(100vh-56px)] overflow-y-auto">
 					{children}
 				</div>
 			</div>
