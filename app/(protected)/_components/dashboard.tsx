@@ -59,7 +59,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 				<div className="w-full">
 					<Navbar />
 				</div>
-				<div className="grid h-full place-items-center overflow-y-auto">
+				<div className="grid h-[calc(100vh-56px)] place-items-center overflow-y-auto">
 					{children}
 				</div>
 			</div>
