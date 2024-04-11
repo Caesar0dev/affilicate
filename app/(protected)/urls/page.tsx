@@ -1,73 +1,6 @@
 import { currentUser } from "@/lib/auth";
-import { DashboardIcon } from "@radix-ui/react-icons";
-import ActivityTable from "@/components/dashboard/ActivityTable";
-import Card1 from "@/components/dashboard/Card1";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
-
-const Last30 = [
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Referrals",
-    amount: 9,
-    rate: 55.6,
-    view: true
-  },
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Visits",
-    amount: 156,
-    rate: -9.8,
-    view: true
-  },
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Conversion Rate",
-    amount: 5.77,
-    rate: 59.6,
-    view: false
-  }
-];
-
-const AllTime = [
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Referrals",
-    amount: 181,
-    view: true
-  },
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Visits",
-    amount: 4100,
-    view: true
-  },
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Conversion Rate",
-    amount: "4.41%",
-    view: false
-  },
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Paid Referrals",
-    amount: 170,
-    view: true
-  },
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Unpaid Earnings",
-    amount: "$497.25",
-    view: false
-  },
-  {
-    icon: <DashboardIcon width={30} height={30} />,
-    title: "Total Earnings",
-    amount: "$7876.17",
-    view: false
-  }
-];
 
 const activity = [
   {
@@ -95,23 +28,32 @@ const activity = [
 
 const Urls = async () => {
   const user = await currentUser();
-  const [url, setUrl] = useState<String>("http://localhost");
 
   return (
     <div className="space-y-10 py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">Affiliate URLs</div>
 
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 gap-8">
         <div className="col-span-1">
           <div>Referral URL</div>
           <div>Share your referral URL with your audience to earn commission.</div>
         </div>
         <div className="col-span-2">
-          <Card>
-            <CardContent>
-              <Input value={url} onChange={e => setUrl(e.target.value)} />
-            </CardContent>
+          <Card className="h-full">
+            <CardHeader>
+              <Input type="text" defaultValue={"http://localhost/"} />
+            </CardHeader>
           </Card>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3">
+        <div className="col-span-1">
+          <div>Referral URL generator</div>
+          <div>Use this form to generate a referral link.</div>
+        </div>
+        <div className="col-span-2">
+          <div></div>
         </div>
       </div>
     </div>
