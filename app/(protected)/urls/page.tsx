@@ -2,6 +2,9 @@ import { currentUser } from "@/lib/auth";
 import { DashboardIcon } from "@radix-ui/react-icons";
 import ActivityTable from "@/components/dashboard/ActivityTable";
 import Card1 from "@/components/dashboard/Card1";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 const Last30 = [
   {
@@ -92,10 +95,25 @@ const activity = [
 
 const Urls = async () => {
   const user = await currentUser();
+  const [url, setUrl] = useState<String>("http://localhost");
 
   return (
     <div className="space-y-10 py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">Affiliate URLs</div>
+
+      <div className="grid grid-cols-3">
+        <div className="col-span-1">
+          <div>Referral URL</div>
+          <div>Share your referral URL with your audience to earn commission.</div>
+        </div>
+        <div className="col-span-2">
+          <Card>
+            <CardContent>
+              <Input value={url} onChange={e => setUrl(e.target.value)} />
+            </CardContent>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 };
