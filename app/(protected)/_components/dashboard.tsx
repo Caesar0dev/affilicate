@@ -63,7 +63,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 					</Link>
 				</div>
 			</div>
-			<div className="flex-grow gap-y-10 h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800 overflow-hidden">
+			<div className="flex-grow gap-y-10 h-full overflow-hidden">
 				<div className="w-full">
 					<Navbar />
 				</div>
