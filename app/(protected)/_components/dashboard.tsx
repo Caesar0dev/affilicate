@@ -1,4 +1,5 @@
 "use client";
+import { ReactElement } from "react";
 import Link from "next/link";
 import { Navbar } from "../_components/navbar";
 import { usePathname } from "next/navigation";
@@ -12,14 +13,14 @@ interface NavTabType {
   path: string;
   pathname: string;
   title: string;
-  icon: React.ComponentType<any>;
+  icon: ReactElement;
 }
 
-const NavTab = ({ title, path, pathname, icon: Icon }: NavTabType) => {
+const NavTab = ({ title, path, pathname, icon }: NavTabType) => {
   return (
     <div className={clsx("pl-2 py-2 rounded-sm", pathname === path ? "bg-gray-800" : "hover:bg-gray-400")}>
       <Link href={path} className="flex flex-row space-x-2 items-center">
-        <Icon />
+        {icon}
         <div className="flex-grow">{title}</div>
       </Link>
     </div>
