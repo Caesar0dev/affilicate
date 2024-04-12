@@ -15,11 +15,11 @@ interface NavTabType {
   icon: React.ComponentType<any>;
 }
 
-const NavTab = ({ title, path, pathname, icon }: { title: string; path: string; pathname: string; icon: FC }) => {
+const NavTab = ({ title, path, pathname, icon: Icon }: NavTabType) => {
   return (
     <div className={clsx("pl-2 py-2 rounded-sm", pathname === path ? "bg-gray-800" : "hover:bg-gray-400")}>
-      <Link href="/dashboard" className="flex flex-row space-x-2 items-center">
-        {icon}
+      <Link href={path} className="flex flex-row space-x-2 items-center">
+        <Icon />
         <div className="flex-grow">{title}</div>
       </Link>
     </div>
@@ -50,47 +50,30 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     },
     {
       pathname,
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
+      path: "/server",
+      title: "Server",
+      icon: <HomeIcon />
     },
     {
       pathname,
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
+      path: "/client",
+      title: "Client",
+      icon: <Link2Icon />
     },
     {
       pathname,
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
+      path: "/admin",
+      title: "Admin",
+      icon: <PieChartIcon />
     },
     {
       pathname,
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
-    },
-    {
-      pathname,
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
-    },
-    {
-      pathname,
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
-    },
-    {
-      pathname,
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
+      path: "/settings",
+      title: "Settings",
+      icon: <BarChartIcon />
     }
   ];
+
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
       <div className="bg-gray-700 text-white h-screen w-60 min-w-60 space-y-4">
@@ -98,38 +81,9 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
           <h3 className="text-xl">Affiliate</h3>
         </div>
         <div className="pl-2 pr-1">
-          <NavTab icon={} />
-
-          <div className="hover:bg-gray-400 pl-2 py-2 rounded-sm">
-            <Link href="/statistics" className="flex flex-row space-x-2 items-center">
-              <BarChartIcon />
-              <div className="flex-grow">Statistics</div>
-            </Link>
-          </div>
-          <div className="hover:bg-gray-400 pl-2 py-2 rounded-sm">
-            <Link href="/server" className="flex flex-row space-x-2 items-center">
-              <HomeIcon />
-              <div className="flex-grow">Server</div>
-            </Link>
-          </div>
-          <div className="hover:bg-gray-400 pl-2 py-2 rounded-sm">
-            <Link href="/client" className="flex flex-row space-x-2 items-center">
-              <Link2Icon />
-              <div className="flex-grow">Client</div>
-            </Link>
-          </div>
-          <div className="hover:bg-gray-400 pl-2 py-2 rounded-sm">
-            <Link href="/admin" className="flex flex-row space-x-2 items-center">
-              <PieChartIcon />
-              <div className="flex-grow">Admin</div>
-            </Link>
-          </div>
-          <div className="hover:bg-gray-400 pl-2 py-2 rounded-sm">
-            <Link href="/settings" className="flex flex-row space-x-2 items-center">
-              <BarChartIcon />
-              <div className="flex-grow">Settings</div>
-            </Link>
-          </div>
+          {navData.map((data, i) => (
+            <NavTab key={i} icon={data.icon} path={data.path} pathname={data.pathname} title={data.title} />
+          ))}
         </div>
       </div>
       <div className="flex-grow gap-y-10 h-full overflow-hidden">
