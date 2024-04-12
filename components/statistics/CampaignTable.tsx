@@ -10,12 +10,12 @@ import {
   TableRow
 } from "@/components/ui/table";
 
-interface ActivityType {
-  reference: number;
-  amount: number;
-  description: string;
-  status: string;
-  date: Date;
+interface CampaignType {
+  campaign: string;
+  visits: number;
+  links: string;
+  convert: string;
+  conversion: string;
 }
 
 export default function CampaignTable({ data }: any) {
@@ -23,23 +23,23 @@ export default function CampaignTable({ data }: any) {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Reference</TableHead>
-          <TableHead>Amount</TableHead>
-          <TableHead>description</TableHead>
-          <TableHead>status</TableHead>
-          <TableHead className="text-right">Date</TableHead>
+          <TableHead className="w-[100px]">CAMPAIGN</TableHead>
+          <TableHead>VISITS</TableHead>
+          <TableHead>UNIQUE LINKS</TableHead>
+          <TableHead>CONVERTED</TableHead>
+          <TableHead className="text-right">CONVERSION RATE</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row: any, i: number) => (
+        {data.map((row: CampaignType, i: number) => (
           <TableRow key={i}>
-            <TableCell className="font-medium">{row.reference}</TableCell>
-            <TableCell>{row.amount}</TableCell>
-            <TableCell>{row.description}</TableCell>
+            <TableCell className="font-medium">{row.campaign}</TableCell>
+            <TableCell>{row.visits}</TableCell>
+            <TableCell>{row.links}</TableCell>
             <TableCell>
-              <Badge variant={"success"}>{row.status}</Badge>
+              <Badge variant={"success"}>{row.convert}</Badge>
             </TableCell>
-            <TableCell className="text-right">{row.date.toISOString().slice(0, 10)}</TableCell>
+            <TableCell className="text-right">{row.conversion}</TableCell>
           </TableRow>
         ))}
       </TableBody>

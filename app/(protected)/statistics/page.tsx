@@ -29,22 +29,6 @@ const statistics = [
   {
     title: "Unpaid referrals",
     amount: 0
-  },
-  {
-    title: "Unpaid referrals",
-    amount: 0
-  },
-  {
-    title: "Unpaid referrals",
-    amount: 0
-  },
-  {
-    title: "Unpaid referrals",
-    amount: 0
-  },
-  {
-    title: "Unpaid referrals",
-    amount: 0
   }
 ];
 

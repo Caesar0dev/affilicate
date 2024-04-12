@@ -31,7 +31,7 @@ export default function ActivityTable({ data }: any) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row: any, i: number) => (
+        {data.map((row: ActivityType, i: number) => (
           <TableRow key={i}>
             <TableCell className="font-medium">{row.reference}</TableCell>
             <TableCell>{row.amount}</TableCell>
