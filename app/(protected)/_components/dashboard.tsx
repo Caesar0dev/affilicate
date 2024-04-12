@@ -87,31 +87,31 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
       path: "/creatives",
       title: "Creatives",
       icon: <Link2Icon />
-    },
-    {
-      pathname,
-      path: "/server",
-      title: "Server",
-      icon: <HomeIcon />
-    },
-    {
-      pathname,
-      path: "/client",
-      title: "Client",
-      icon: <Link2Icon />
-    },
-    {
-      pathname,
-      path: "/admin",
-      title: "Admin",
-      icon: <PieChartIcon />
-    },
-    {
-      pathname,
-      path: "/settings",
-      title: "Settings",
-      icon: <BarChartIcon />
     }
+    // {
+    //   pathname,
+    //   path: "/server",
+    //   title: "Server",
+    //   icon: <HomeIcon />
+    // },
+    // {
+    //   pathname,
+    //   path: "/client",
+    //   title: "Client",
+    //   icon: <Link2Icon />
+    // },
+    // {
+    //   pathname,
+    //   path: "/admin",
+    //   title: "Admin",
+    //   icon: <PieChartIcon />
+    // },
+    // {
+    //   pathname,
+    //   path: "/settings",
+    //   title: "Settings",
+    //   icon: <BarChartIcon />
+    // }
   ];
 
   return (
