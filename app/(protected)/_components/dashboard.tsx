@@ -129,17 +129,13 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     <div className="h-full w-full flex flex-row overflow-hidden">
       <div
         className={clsx(
-          "bg-gray-700 text-white h-screen space-y-4 max-md:w-0 md:w-60 md:min-w-60",
-          open && "fixed top-0 left-0 !w-60 z-10"
+          "bg-gray-700 text-white h-screen space-y-4 max-md:hidden md:w-60 md:min-w-60",
+          open && "max-md:!block fixed top-0 left-0 !w-60 z-10"
         )}
       >
-        <div className="w-full bg-gray-800 px-2 py-4 relative">
-          <h3 className="text-xl">Affiliate</h3>
-          {open && (
-            <div className="absolute top-2 right-0 bg-slate-500">
-              <Cross1Icon width={32} height={32} />
-            </div>
-          )}
+        <div className="w-full flex flex-row items-center bg-gray-800 px-2 py-4 relative">
+          <h3 className="text-xl flex-grow">Affiliate</h3>
+          {open && <Cross1Icon width={32} height={32} onClick={e => setOpen(false)} />}
         </div>
         <div className="pl-2 pr-1">
           {navData.map((data, i) => (
