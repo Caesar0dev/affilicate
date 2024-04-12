@@ -1,3 +1,4 @@
+import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { currentUser } from "@/lib/auth";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
@@ -47,14 +48,25 @@ const data = [
 ];
 
 const Graphs = async () => {
-  const user = await currentUser();
-
   return (
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">Graphs</div>
 
       <div>
         <div>Earnings</div>
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select a fruit" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectLabel>Fruits</SelectLabel>
+            <SelectItem value="apple">Apple</SelectItem>
+            <SelectItem value="banana">Banana</SelectItem>
+            <SelectItem value="blueberry">Blueberry</SelectItem>
+            <SelectItem value="grapes">Grapes</SelectItem>
+            <SelectItem value="pineapple">Pineapple</SelectItem>
+          </SelectContent>
+        </Select>
 
         <div>
           {/* <ResponsiveContainer width="100%" height="100%">
