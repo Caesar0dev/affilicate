@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { currentUser } from "@/lib/auth";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
@@ -52,21 +53,31 @@ const Graphs = async () => {
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">Graphs</div>
 
-      <div>
-        <div>Earnings</div>
-        <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select a fruit" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectLabel>Fruits</SelectLabel>
-            <SelectItem value="apple">Apple</SelectItem>
-            <SelectItem value="banana">Banana</SelectItem>
-            <SelectItem value="blueberry">Blueberry</SelectItem>
-            <SelectItem value="grapes">Grapes</SelectItem>
-            <SelectItem value="pineapple">Pineapple</SelectItem>
-          </SelectContent>
-        </Select>
+      <div className="space-y-2">
+        <div className="text-xl font-bold">Earnings</div>
+        <div className="flex flex-row space-x-4">
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select a fruit" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="today">Today</SelectItem>
+              <SelectItem value="yesterday">Yesterday</SelectItem>
+              <SelectItem value="thisweek">This Week</SelectItem>
+              <SelectItem value="lastweek">Last Week</SelectItem>
+              <SelectItem value="thismonth">This Month</SelectItem>
+              <SelectItem value="lastmonth">Last Month</SelectItem>
+              <SelectItem value="thisquarter">This Quarter</SelectItem>
+              <SelectItem value="lastquarter">Last Quarter</SelectItem>
+              <SelectItem value="thisyear">This Year</SelectItem>
+              <SelectItem value="lastyear">Last Year</SelectItem>
+            </SelectContent>
+          </Select>
+
+          <Button variant={"default"} className="bg-blue-500 hover:bg-blue-400">
+            Filter
+          </Button>
+        </div>
 
         <div>
           {/* <ResponsiveContainer width="100%" height="100%">
