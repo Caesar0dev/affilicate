@@ -18,7 +18,7 @@ interface CampaignType {
   conversion: string;
 }
 
-export default function CampaignTable({ data }: any) {
+export default function CampaignTable({ data }: CampaignType[]) {
   return (
     <Table>
       <TableHeader>

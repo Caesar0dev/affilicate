@@ -1,5 +1,6 @@
 import { currentUser } from "@/lib/auth";
 import Card from "@/components/statistics/Card";
+import CampaignTable from "@/components/statistics/CampaignTable";
 
 const statistics = [
   {
@@ -32,6 +33,16 @@ const statistics = [
   }
 ];
 
+const campaign = [
+  {
+    campaign: "Campaign",
+    visits: 3842,
+    links: "links",
+    convert: "convert",
+    conversion: "rate"
+  }
+];
+
 const Statistics = async () => {
   const user = await currentUser();
 
@@ -45,7 +56,9 @@ const Statistics = async () => {
         ))}
       </div>
 
-      <div></div>
+      <div>
+        <CampaignTable data={campaign} />
+      </div>
     </div>
   );
 };
