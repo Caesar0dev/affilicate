@@ -1,4 +1,3 @@
-"use client";
 import { currentUser } from "@/lib/auth";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
