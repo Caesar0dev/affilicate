@@ -80,7 +80,9 @@ const Graphs = async () => {
             Filter
           </Button>
         </div>
+      </div>
 
+      <div className="mx-auto my-12">
         <LineChart
           width={500}
           height={300}
