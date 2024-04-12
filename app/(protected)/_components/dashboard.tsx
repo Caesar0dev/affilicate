@@ -1,5 +1,5 @@
 "use client";
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import Navbar from "./navbar";
 import { usePathname } from "next/navigation";
@@ -27,7 +27,12 @@ interface NavTabType {
 
 const NavTab = ({ title, path, pathname, icon }: NavTabType) => {
   return (
-    <div className={clsx("pl-2 py-2 rounded-sm max-md:w-0", pathname === path ? "bg-gray-800" : "hover:bg-gray-400")}>
+    <div
+      className={clsx(
+        "pl-2 py-2 rounded-sm max-md:w-0 -z-50 overflow-hidden",
+        pathname === path ? "bg-gray-800" : "hover:bg-gray-400"
+      )}
+    >
       <Link href={path} className="flex flex-row space-x-2 items-center">
         {icon}
         <div className="flex-grow">{title}</div>
@@ -40,6 +45,14 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
   const pathname = usePathname();
 
   const [open, setOpen] = useState<Boolean>(false);
+
+  window.addEventListener(
+    "resize",
+    e => {
+      window.innerWidth > 768 && setOpen(false);
+    },
+    true
+  );
 
   const navData = [
     {
@@ -120,11 +133,11 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     <div className="h-full w-full flex flex-row overflow-hidden">
       <div
         className={clsx(
-          "bg-gray-700 text-white h-screen space-y-4 max-md:w-0 md:w-60",
-          open && "fixed top-0 left-0 !w-60 z-30"
+          "bg-gray-700 text-white h-screen space-y-4 max-md:w-0 md:w-60 md:min-w-60 -z-50",
+          open && "fixed top-0 left-0 !w-60 z-10"
         )}
       >
-        <div className="w-full bg-gray-800 px-2 py-4">
+        <div className="w-full bg-gray-800 px-2 py-4 -z-50">
           <h3 className="text-xl">Affiliate</h3>
         </div>
         <div className="pl-2 pr-1">
@@ -133,7 +146,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
           ))}
         </div>
       </div>
-      <div className="flex-grow gap-y-10 h-full overflow-hidden z-20">
+      <div className="flex-grow gap-y-10 h-full overflow-hidden z-0">
         <div className="w-full">
           <Navbar setOpen={setOpen} />
         </div>
