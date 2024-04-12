@@ -1,33 +1,33 @@
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
-interface CampaignType {
-  campaign: string;
-  visits: number;
-  links: string;
-  convert: string;
-  conversion: string;
+interface ReferralsType {
+  reference: string;
+  amount: number;
+  description: string;
+  status: string;
+  date: Date;
 }
 
-export default function CampaignTable({ data }: { data: CampaignType[] }) {
+export default function ReferralsTable({ data }: { data: ReferralsType[] }) {
   return (
     <Table className="rounded-md overflow-hidden">
       <TableHeader className="bg-gray-50 shadow-md">
         <TableRow>
-          <TableHead className="w-[100px]">CAMPAIGN</TableHead>
-          <TableHead>VISITS</TableHead>
-          <TableHead>UNIQUE LINKS</TableHead>
-          <TableHead>CONVERTED</TableHead>
-          <TableHead className="text-right">CONVERSION RATE</TableHead>
+          <TableHead className="w-[100px]">REFERENCE</TableHead>
+          <TableHead>AMOUNT</TableHead>
+          <TableHead>DESCRIPTION</TableHead>
+          <TableHead>STATUS</TableHead>
+          <TableHead className="text-right">DATE</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row: CampaignType, i: number) => (
+        {data.map((row: ReferralsType, i: number) => (
           <TableRow key={i}>
-            <TableCell className="font-medium">{row.campaign}</TableCell>
-            <TableCell>{row.visits}</TableCell>
-            <TableCell>{row.links}</TableCell>
-            <TableCell>{row.convert}</TableCell>
-            <TableCell className="text-right">{row.conversion}</TableCell>
+            <TableCell className="font-medium">{row.reference}</TableCell>
+            <TableCell>{row.amount}</TableCell>
+            <TableCell>{row.description}</TableCell>
+            <TableCell>{row.status}</TableCell>
+            <TableCell className="text-right">{row.date.toISOString().slice(0, 10)}</TableCell>
           </TableRow>
         ))}
       </TableBody>
