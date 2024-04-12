@@ -118,7 +118,12 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
-      <div className={clsx("bg-gray-700 text-white h-screen w-60 space-y-4 max-md:w-0")}>
+      <div
+        className={clsx(
+          "bg-gray-700 text-white h-screen space-y-4 max-md:w-0 md:w-60",
+          open && "fixed top-0 left-0 !w-60 z-30"
+        )}
+      >
         <div className="w-full bg-gray-800 px-2 py-4">
           <h3 className="text-xl">Affiliate</h3>
         </div>
