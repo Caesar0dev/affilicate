@@ -1,5 +1,5 @@
 "use client";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useState } from "react";
 import Link from "next/link";
 import Navbar from "./navbar";
 import { usePathname } from "next/navigation";
@@ -12,7 +12,8 @@ import {
   DashboardIcon,
   ArchiveIcon,
   BookmarkIcon,
-  CursorArrowIcon
+  CursorArrowIcon,
+  Cross1Icon
 } from "@radix-ui/react-icons";
 interface ProtectedLayoutProps {
   children: React.ReactNode;
@@ -27,12 +28,7 @@ interface NavTabType {
 
 const NavTab = ({ title, path, pathname, icon }: NavTabType) => {
   return (
-    <div
-      className={clsx(
-        "pl-2 py-2 rounded-sm max-md:w-0 -z-50 overflow-hidden",
-        pathname === path ? "bg-gray-800" : "hover:bg-gray-400"
-      )}
-    >
+    <div className={clsx("pl-2 py-2 rounded-sm max-md:w-0", pathname === path ? "bg-gray-800" : "hover:bg-gray-400")}>
       <Link href={path} className="flex flex-row space-x-2 items-center">
         {icon}
         <div className="flex-grow">{title}</div>
@@ -133,12 +129,17 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     <div className="h-full w-full flex flex-row overflow-hidden">
       <div
         className={clsx(
-          "bg-gray-700 text-white h-screen space-y-4 max-md:w-0 md:w-60 md:min-w-60 -z-50",
+          "bg-gray-700 text-white h-screen space-y-4 max-md:w-0 md:w-60 md:min-w-60",
           open && "fixed top-0 left-0 !w-60 z-10"
         )}
       >
-        <div className="w-full bg-gray-800 px-2 py-4 -z-50">
+        <div className="w-full bg-gray-800 px-2 py-4 relative">
           <h3 className="text-xl">Affiliate</h3>
+          {open && (
+            <div className="absolute top-2 right-0 bg-slate-500">
+              <Cross1Icon width={32} height={32} />
+            </div>
+          )}
         </div>
         <div className="pl-2 pr-1">
           {navData.map((data, i) => (
