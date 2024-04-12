@@ -1,14 +1,4 @@
-import { Badge } from "@/components/ui/badge";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 interface CampaignType {
   campaign: string;
@@ -20,8 +10,8 @@ interface CampaignType {
 
 export default function CampaignTable({ data }: { data: CampaignType[] }) {
   return (
-    <Table>
-      <TableHeader>
+    <Table className="rounded-md overflow-hidden">
+      <TableHeader className="bg-gray-100 shadow-md">
         <TableRow>
           <TableHead className="w-[100px]">CAMPAIGN</TableHead>
           <TableHead>VISITS</TableHead>
@@ -36,9 +26,7 @@ export default function CampaignTable({ data }: { data: CampaignType[] }) {
             <TableCell className="font-medium">{row.campaign}</TableCell>
             <TableCell>{row.visits}</TableCell>
             <TableCell>{row.links}</TableCell>
-            <TableCell>
-              <Badge variant={"success"}>{row.convert}</Badge>
-            </TableCell>
+            <TableCell>{row.convert}</TableCell>
             <TableCell className="text-right">{row.conversion}</TableCell>
           </TableRow>
         ))}
