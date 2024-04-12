@@ -18,7 +18,7 @@ export const UserButton = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex flex-row items-center justify-between space-x-2 rounded-full border-sky-200 hover:outline">
+      <DropdownMenuTrigger className="flex flex-row items-center justify-between space-x-2 rounded-full outline-sky-200 w-16 hover:outline active:outline">
         <Avatar>
           <AvatarImage src={user?.image || ""} />
           <AvatarFallback className="bg-sky-500">
