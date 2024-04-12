@@ -1,7 +1,7 @@
 "use client";
 import { ReactElement, useState } from "react";
 import Link from "next/link";
-import { Navbar } from "../_components/navbar";
+import Navbar from "./navbar";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx/lite";
 import {
@@ -128,7 +128,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
           ))}
         </div>
       </div>
-      <div className="flex-grow gap-y-10 h-full overflow-hidden">
+      <div className="flex-grow gap-y-10 h-full overflow-hidden z-20">
         <div className="w-full">
           <Navbar setOpen={setOpen} />
         </div>

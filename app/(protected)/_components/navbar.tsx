@@ -7,7 +7,11 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@/components/auth/user-button";
 import { TextAlignJustifyIcon } from "@radix-ui/react-icons";
 
-export const Navbar = ({ setOpen }: any) => {
+interface NavbarProps {
+  setOpen: (value: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setOpen }: any) => {
   const pathname = usePathname();
 
   return (
@@ -17,3 +21,5 @@ export const Navbar = ({ setOpen }: any) => {
     </nav>
   );
 };
+
+export default Navbar;
