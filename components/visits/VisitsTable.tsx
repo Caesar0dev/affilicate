@@ -12,7 +12,7 @@ export default function VisitsTable({ data }: { data: VisitsType[] }) {
     <Table className="rounded-md overflow-hidden">
       <TableHeader className="bg-gray-50 shadow-md">
         <TableRow>
-          <TableHead className="w-[100px]">URL</TableHead>
+          <TableHead>URL</TableHead>
           <TableHead>REFERRING URL</TableHead>
           <TableHead>CONVERTED</TableHead>
           <TableHead>DATE</TableHead>

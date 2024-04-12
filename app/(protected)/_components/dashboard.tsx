@@ -84,6 +84,12 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     },
     {
       pathname,
+      path: "/creatives",
+      title: "Creatives",
+      icon: <Link2Icon />
+    },
+    {
+      pathname,
       path: "/server",
       title: "Server",
       icon: <HomeIcon />

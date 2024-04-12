@@ -12,7 +12,7 @@ export default function PayoutTable({ data }: { data: PayoutType[] }) {
     <Table className="rounded-md overflow-hidden">
       <TableHeader className="bg-gray-50 shadow-md">
         <TableRow>
-          <TableHead className="w-[100px]">DATE</TableHead>
+          <TableHead>DATE</TableHead>
           <TableHead>AMOUNT</TableHead>
           <TableHead>PAYOUT METHOD</TableHead>
           <TableHead>STATUS</TableHead>

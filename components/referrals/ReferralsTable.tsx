@@ -13,7 +13,7 @@ export default function ReferralsTable({ data }: { data: ReferralsType[] }) {
     <Table className="rounded-md overflow-hidden">
       <TableHeader className="bg-gray-50 shadow-md">
         <TableRow>
-          <TableHead className="w-[100px]">REFERENCE</TableHead>
+          <TableHead>REFERENCE</TableHead>
           <TableHead>AMOUNT</TableHead>
           <TableHead>DESCRIPTION</TableHead>
           <TableHead>STATUS</TableHead>

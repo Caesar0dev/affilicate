@@ -13,7 +13,7 @@ export default function CampaignTable({ data }: { data: CampaignType[] }) {
     <Table className="rounded-md overflow-hidden">
       <TableHeader className="bg-gray-50 shadow-md">
         <TableRow>
-          <TableHead className="w-[100px]">CAMPAIGN</TableHead>
+          <TableHead>CAMPAIGN</TableHead>
           <TableHead>VISITS</TableHead>
           <TableHead>UNIQUE LINKS</TableHead>
           <TableHead>CONVERTED</TableHead>

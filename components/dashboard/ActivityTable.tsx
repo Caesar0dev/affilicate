@@ -23,7 +23,7 @@ export default function ActivityTable({ data }: { data: ActivityType[] }) {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Reference</TableHead>
+          <TableHead className="w-[150px]">Reference</TableHead>
           <TableHead>Amount</TableHead>
           <TableHead>description</TableHead>
           <TableHead>status</TableHead>
