@@ -39,7 +39,7 @@ const NavTab = ({ title, path, pathname, icon }: NavTabType) => {
 export const Dashboard = ({ children }: ProtectedLayoutProps) => {
   const pathname = usePathname();
 
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<Boolean>(false);
 
   const navData = [
     {
@@ -118,7 +118,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
-      <div className="bg-gray-700 text-white h-screen min-w-60 space-y-4 max-md:hidden">
+      <div className="bg-gray-700 text-white h-screen w-60 space-y-4 max-md:w-0">
         <div className="w-full bg-gray-800 px-2 py-4">
           <h3 className="text-xl">Affiliate</h3>
         </div>
@@ -130,7 +130,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
       </div>
       <div className="flex-grow gap-y-10 h-full overflow-hidden">
         <div className="w-full">
-          <Navbar />
+          <Navbar setOpen={setOpen} />
         </div>
         <div className="grid h-[calc(100vh-56px)] overflow-y-auto">{children}</div>
       </div>
