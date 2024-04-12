@@ -1,5 +1,4 @@
 "use client";
-import { FC } from "react";
 import Link from "next/link";
 import { Navbar } from "../_components/navbar";
 import { usePathname } from "next/navigation";
@@ -9,8 +8,89 @@ interface ProtectedLayoutProps {
   children: React.ReactNode;
 }
 
+interface NavTabType {
+  path: string;
+  pathname: string;
+  title: string;
+  icon: React.ComponentType<any>;
+}
+
+const NavTab = ({ title, path, pathname, icon }: { title: string; path: string; pathname: string; icon: FC }) => {
+  return (
+    <div className={clsx("pl-2 py-2 rounded-sm", pathname === path ? "bg-gray-800" : "hover:bg-gray-400")}>
+      <Link href="/dashboard" className="flex flex-row space-x-2 items-center">
+        {icon}
+        <div className="flex-grow">{title}</div>
+      </Link>
+    </div>
+  );
+};
+
 export const Dashboard = ({ children }: ProtectedLayoutProps) => {
   const pathname = usePathname();
+
+  const navData = [
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    },
+    {
+      pathname,
+      path: "/dashboard",
+      title: "Dashboard",
+      icon: <DashboardIcon />
+    }
+  ];
 
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
@@ -19,14 +99,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
           <h3 className="text-xl">Affiliate</h3>
         </div>
         <div className="pl-2 pr-1">
-          <div
-            className={clsx("pl-2 py-2 rounded-sm", pathname === "/dashboard" ? "bg-gray-800" : "hover:bg-gray-400")}
-          >
-            <Link href="/dashboard" className="flex flex-row space-x-2 items-center">
-              <DashboardIcon />
-              <div className="flex-grow">Dashboard</div>
-            </Link>
-          </div>
+          <NavTab icon={} />
           <div className="hover:bg-gray-400 pl-2 py-2 rounded-sm">
             <Link href="/urls" className="flex flex-row space-x-2 items-center">
               <BarChartIcon />
@@ -77,17 +150,6 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
         </div>
         <div className="grid h-[calc(100vh-56px)] overflow-y-auto">{children}</div>
       </div>
-    </div>
-  );
-};
-
-const NavTab = ({ title, pathname, icon }: { title: string; pathname: string; icon: FC }) => {
-  return (
-    <div className={clsx("pl-2 py-2 rounded-sm", pathname === "/dashboard" ? "bg-gray-800" : "hover:bg-gray-400")}>
-      <Link href="/dashboard" className="flex flex-row space-x-2 items-center">
-        <DashboardIcon />
-        <div className="flex-grow">Dashboard</div>
-      </Link>
     </div>
   );
 };
