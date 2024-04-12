@@ -1,16 +1,16 @@
-import PayoutTable from "@/components/payouts/PayoutTable";
+import VisitsTable from "@/components/visits/VisitsTable";
 import { currentUser } from "@/lib/auth";
 
-const payout = [
+const visits = [
   {
-    date: new Date(),
-    amount: 35,
-    method: "sdk",
-    status: "string"
+    url: "http://localhost",
+    ref: "reference url",
+    convert: "convert",
+    date: new Date()
   }
 ];
 
-const Payouts = async () => {
+const Visits = async () => {
   const user = await currentUser();
 
   return (
@@ -18,10 +18,10 @@ const Payouts = async () => {
       <div className="text-2xl font-bold">Visits</div>
 
       <div>
-        <PayoutTable data={payout} />
+        <VisitsTable data={visits} />
       </div>
     </div>
   );
 };
 
-export default Payouts;
+export default Visits;

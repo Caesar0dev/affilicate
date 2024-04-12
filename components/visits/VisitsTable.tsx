@@ -1,7 +1,7 @@
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 interface VisitsType {
-  url: number;
+  url: string;
   ref: string;
   convert: string;
   date: Date;

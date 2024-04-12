@@ -11,7 +11,8 @@ import {
   BarChartIcon,
   DashboardIcon,
   ArchiveIcon,
-  BookmarkIcon
+  BookmarkIcon,
+  CursorArrowIcon
 } from "@radix-ui/react-icons";
 interface ProtectedLayoutProps {
   children: React.ReactNode;
@@ -74,6 +75,12 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
       path: "/payouts",
       title: "Payouts",
       icon: <BookmarkIcon />
+    },
+    {
+      pathname,
+      path: "/visits",
+      title: "Visits",
+      icon: <CursorArrowIcon />
     },
     {
       pathname,
