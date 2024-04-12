@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Navbar } from "../_components/navbar";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx/lite";
-import { HomeIcon, Link2Icon, PieChartIcon, BarChartIcon, DashboardIcon } from "@radix-ui/react-icons";
+import { HomeIcon, Link2Icon, PieChartIcon, BarChartIcon, DashboardIcon, ArchiveIcon } from "@radix-ui/react-icons";
 interface ProtectedLayoutProps {
   children: React.ReactNode;
 }
@@ -48,6 +48,18 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
       path: "/statistics",
       title: "Statistics",
       icon: <BarChartIcon />
+    },
+    {
+      pathname,
+      path: "/graphs",
+      title: "Graph",
+      icon: <PieChartIcon />
+    },
+    {
+      pathname,
+      path: "/referrals",
+      title: "Referrals",
+      icon: <ArchiveIcon />
     },
     {
       pathname,
