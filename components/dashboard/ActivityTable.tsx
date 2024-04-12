@@ -18,7 +18,7 @@ interface ActivityType {
   date: Date;
 }
 
-export default function ActivityTable({ data }: any) {
+export default function ActivityTable({ data }: { data: ActivityType[] }) {
   return (
     <Table>
       <TableHeader>

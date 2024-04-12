@@ -35,11 +35,25 @@ const statistics = [
 
 const campaign = [
   {
-    campaign: "Campaign",
+    campaign: "Campaign 1",
     visits: 3842,
     links: "links",
     convert: "convert",
     conversion: "rate"
+  },
+  {
+    campaign: "Campaign 2",
+    visits: 6352,
+    links: "links",
+    convert: "convert3",
+    conversion: "rate43"
+  },
+  {
+    campaign: "Campaign 3",
+    visits: 9438,
+    links: "links 3",
+    convert: "convert 3",
+    conversion: "rating"
   }
 ];
 
