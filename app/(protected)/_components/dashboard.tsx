@@ -116,7 +116,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
-      <div className="bg-gray-700 text-white h-screen w-60 min-w-60 space-y-4">
+      <div className="bg-gray-700 text-white h-screen max-md:hidden min-w-60 space-y-4">
         <div className="w-full bg-gray-800 px-2 py-4">
           <h3 className="text-xl">Affiliate</h3>
         </div>
