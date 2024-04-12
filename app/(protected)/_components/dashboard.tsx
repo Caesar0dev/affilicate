@@ -24,12 +24,13 @@ interface NavTabType {
   pathname: string;
   title: string;
   icon: ReactElement;
+  setOpen?: any;
 }
 
-const NavTab = ({ title, path, pathname, icon }: NavTabType) => {
+const NavTab = ({ title, path, pathname, icon, setOpen }: NavTabType) => {
   return (
-    <div className={clsx("pl-2 py-2 rounded-sm max-md:w-0", pathname === path ? "bg-gray-800" : "hover:bg-gray-400")}>
-      <Link href={path} className="flex flex-row space-x-2 items-center">
+    <div className={clsx("pl-2 py-2 rounded-sm", pathname === path ? "bg-gray-800" : "hover:bg-gray-400")}>
+      <Link href={path} className="flex flex-row space-x-2 items-center" onClick={e => setOpen(false)}>
         {icon}
         <div className="flex-grow">{title}</div>
       </Link>
@@ -129,7 +130,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     <div className="h-full w-full flex flex-row overflow-hidden">
       <div
         className={clsx(
-          "bg-gray-700 text-white h-screen space-y-4 max-md:hidden md:w-60 md:min-w-60",
+          "bg-gray-700 text-white h-screen space-y-4 max-md:hidden md:w-60 md:min-w-60 overflow-y-auto",
           open && "max-md:!block fixed top-0 left-0 !w-60 z-10"
         )}
       >
@@ -139,7 +140,14 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
         </div>
         <div className="pl-2 pr-1">
           {navData.map((data, i) => (
-            <NavTab key={i} icon={data.icon} path={data.path} pathname={data.pathname} title={data.title} />
+            <NavTab
+              key={i}
+              icon={data.icon}
+              path={data.path}
+              pathname={data.pathname}
+              title={data.title}
+              setOpen={setOpen}
+            />
           ))}
         </div>
       </div>
