@@ -1,5 +1,3 @@
-"use client";
-
 import Chart from "@/components/chart";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
