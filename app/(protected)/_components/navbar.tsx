@@ -11,8 +11,8 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-secondary flex justify-end items-center px-4 py-2 shadow-sm">
-      <TextAlignJustifyIcon width={24} height={24} />
+    <nav className="bg-secondary flex w-full justify-end items-center px-4 py-2 shadow-sm">
+      <TextAlignJustifyIcon width={24} height={24} className="mr-auto md:hidden" />
       <UserButton />
     </nav>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import Link from "next/link";
 import { Navbar } from "../_components/navbar";
 import { usePathname } from "next/navigation";
@@ -38,6 +38,8 @@ const NavTab = ({ title, path, pathname, icon }: NavTabType) => {
 
 export const Dashboard = ({ children }: ProtectedLayoutProps) => {
   const pathname = usePathname();
+
+  const [open, setOpen] = useState<boolean>(false);
 
   const navData = [
     {
@@ -116,7 +118,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
-      <div className="bg-gray-700 text-white h-screen max-md:hidden min-w-60 space-y-4">
+      <div className="bg-gray-700 text-white h-screen min-w-60 space-y-4 max-md:hidden">
         <div className="w-full bg-gray-800 px-2 py-4">
           <h3 className="text-xl">Affiliate</h3>
         </div>
