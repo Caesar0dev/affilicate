@@ -1,5 +1,5 @@
 "use client";
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import Link from "next/link";
 import Navbar from "./navbar";
 import { usePathname } from "next/navigation";
@@ -43,13 +43,15 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
   const [open, setOpen] = useState<Boolean>(false);
 
-  window.addEventListener(
-    "resize",
-    e => {
-      window.innerWidth > 768 && setOpen(false);
-    },
-    true
-  );
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      e => {
+        window.innerWidth > 768 && setOpen(false);
+      },
+      true
+    );
+  }, []);
 
   const navData = [
     {
@@ -130,7 +132,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     <div className="h-full w-full flex flex-row overflow-hidden">
       <div
         className={clsx(
-          "bg-gray-700 text-white h-screen space-y-4 max-md:hidden md:w-60 md:min-w-60 overflow-y-auto",
+          "bg-gray-700 text-white h-screen space-y-4 max-md:hidden md:w-60 md:min-w-60 overflow-y-auto ease-in-out duration-300",
           open && "max-md:!block fixed top-0 left-0 !w-60 z-10"
         )}
       >
