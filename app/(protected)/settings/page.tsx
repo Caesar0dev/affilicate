@@ -59,22 +59,22 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="p-6 space-y-4">
+    <div className="p-6 space-y-10">
       <div className="text-3xl font-medium">Settings</div>
       <div className="grid grid-cols-4">
         <div className="col-span-1">User Settings</div>
-        <div className="col-span-3 border rounded-lg">
+        <div className="col-span-3 border rounded-lg overflow-hidden">
           <div className="pt-6 space-y-4">
-            <div className="text-xl px-6">Payment</div>
+            <div className="text-xl px-6 font-medium">Payment</div>
             <div className="px-6">
               <Label htmlFor="payment_email">Payment Email</Label>
               <Input value={user?.email || ""} />
             </div>
-            <div className="px-6">
-              <div>Notifications</div>
+            <div className="px-6 space-y-4">
+              <div className="text-xl font-medium">Notifications</div>
               <div className="flex flex-row w-full space-x-2">
                 <div className="mt-1">
-                  <Checkbox />
+                  <Checkbox className="data-[state=checked]:bg-indigo-500 data-[state=checked]:text-white border-gray-400" />
                 </div>
                 <div>
                   <div>Enable referral notification</div>
@@ -83,7 +83,7 @@ const SettingsPage = () => {
               </div>
             </div>
             <div className="bg-gray-50 px-6 py-4">
-              <Button>Save user settings</Button>
+              <Button className="bg-indigo-500 hover:bg-indigo-400">Save user settings</Button>
             </div>
           </div>
         </div>

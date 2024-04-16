@@ -128,7 +128,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
           open && "max-md:!block fixed top-0 left-0 !w-60 z-10"
         )}
       >
-        <div className="w-full flex flex-row items-center bg-gray-800 px-2 py-4 relative">
+        <div className="w-full flex flex-row items-center p-4 relative">
           <h3 className="text-xl flex-grow">Affiliate</h3>
           {open && <Cross1Icon width={32} height={32} onClick={e => setOpen(false)} />}
         </div>
