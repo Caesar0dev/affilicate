@@ -168,3 +168,31 @@ model CustomerMeta {
   meta_key String
   @@unique([meta_id])
 }
+
+model CustomerMeta {
+  meta_id String @id @default(cuid())
+  affwp_customer_id String
+  meta_key String
+  meta_key String
+  @@unique([meta_id])
+}
+
+model Customers {
+  customer_id String @id @default(cuid())
+  user_id user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email String
+  first_name String
+  last_name String
+  ip String
+  date_created DateTime
+}
+
+model Groups {
+  customer_id String @id @default(cuid())
+  user_id user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email String
+  first_name String
+  last_name String
+  ip String
+  date_created DateTime
+}
