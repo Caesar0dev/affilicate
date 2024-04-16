@@ -293,3 +293,19 @@ model Sales {
 
   @@unique([referral_id])
 }
+
+model Visits {
+  visit_id      String   @id @default(cuid())
+  affilicate_id String
+  referral_id   String
+  rest_id       String
+  url           String
+  referrer      String
+  campaign      String
+  context       String
+  flag          String
+  ip            String
+  date          DateTime
+
+  @@unique([visit_id])
+}
