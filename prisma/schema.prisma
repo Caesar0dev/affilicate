@@ -95,7 +95,7 @@ model AffiliateMeta {
 model Affiliate {
   affiliate_id String @id @default(cuid())
   rest_id String @id @default(cuid())
-  user_id   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user_id user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   rate String
   rate_type String
   flat_rate_basis String
@@ -109,3 +109,14 @@ model Affiliate {
   @@unique([affiliate_id])
 }
 
+model Campaigns {
+  campaign_id String @id @default(cuid())
+  affiliate_id Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
+  campaign String
+  visits Int
+  unique_visits Int
+  referrals Int
+  conversion_rate Float
+  hash String
+  rest_id String
+}
