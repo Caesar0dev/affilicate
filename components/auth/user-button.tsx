@@ -27,9 +27,13 @@ export const UserButton = () => {
         </Avatar>
         <ChevronDownIcon />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-40" align="end">
+      <DropdownMenuContent className="w-40 divide-y" align="end">
         {user ? (
           <>
+            <DropdownMenuItem>
+              <ExitIcon className="h-4 w-4 mr-2" />
+              Settings
+            </DropdownMenuItem>
             <DropdownMenuItem>
               <ExitIcon className="h-4 w-4 mr-2" />
               Settings

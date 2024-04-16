@@ -62,7 +62,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     {
       path: "/urls",
       title: "Affiliate URLs",
-      icon: <BarChartIcon />
+      icon: <HomeIcon />
     },
     {
       path: "/statistics",
