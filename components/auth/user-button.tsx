@@ -12,6 +12,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { LogoutButton } from "@/components/auth/logout-button";
 import { SignUpButton } from "@/components/auth/signup-button";
+import Link from "next/link";
 
 export const UserButton = () => {
   const user = useCurrentUser();
@@ -31,10 +32,12 @@ export const UserButton = () => {
         {user ? (
           <>
             <DropdownMenuItem>Signed in as {user.email}</DropdownMenuItem>
-            <DropdownMenuItem>
-              <ExitIcon className="h-4 w-4 mr-2" />
-              Settings
-            </DropdownMenuItem>
+            <Link href={"/settings"}>
+              <DropdownMenuItem>
+                <ExitIcon className="h-4 w-4 mr-2" />
+                Settings
+              </DropdownMenuItem>
+            </Link>
             <LogoutButton>
               <DropdownMenuItem>
                 <ExitIcon className="h-4 w-4 mr-2" />
