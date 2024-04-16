@@ -35,7 +35,7 @@ export default function Card1({ icon, title, amount, rate, view }: Card1Type) {
         </div>
       </div>
       {view && (
-        <Button variant={"secondary"} className="w-full text-purple-600 bg-gray-200 flex justify-start">
+        <Button variant={"secondary"} className="w-full text-indigo-500 bg-gray-200 flex justify-start">
           View all
         </Button>
       )}
