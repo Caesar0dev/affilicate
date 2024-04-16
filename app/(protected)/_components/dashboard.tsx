@@ -55,19 +55,16 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
 
   const navData = [
     {
-      pathname,
       path: "/dashboard",
       title: "Dashboard",
       icon: <DashboardIcon />
     },
     {
-      pathname,
       path: "/urls",
       title: "Affiliate URLs",
       icon: <BarChartIcon />
     },
     {
-      pathname,
       path: "/statistics",
       title: "Statistics",
       icon: <BarChartIcon />
