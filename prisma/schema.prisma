@@ -199,6 +199,8 @@ model Groups {
   type     String
   title    String
   meta     String
+
+  @@unique([group_id])
 }
 
 model Notifications {
@@ -214,6 +216,8 @@ model Notifications {
   dismissed    Int
   date_created DateTime
   date_updated DateTime
+
+  @@unique([id])
 }
 
 model Payouts {
@@ -230,4 +234,15 @@ model Payouts {
   desciption           String
   status               String
   date                 DateTime
+
+  @@unique([payout_id])
+}
+
+model ReferralMeta {
+  meta_id     String @id @default(cuid())
+  referral_id BigInt
+  meta_key    String
+  meta_value  String
+
+  @@unique([meta_id])
 }
