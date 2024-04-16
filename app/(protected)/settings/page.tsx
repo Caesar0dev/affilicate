@@ -63,15 +63,15 @@ const SettingsPage = () => {
       <div className="grid grid-cols-4">
         <div className="col-span-1">User Settings</div>
         <div className="col-span-3">
-          <div>
-            <div>Payment</div>
+          <div className="border rounded-md p-2 space-y-4 pt-4">
+            <div className="text-xl">Payment</div>
             <div>
               <Label htmlFor="payment_email">Payment Email</Label>
               <Input value={user?.email || ""} />
             </div>
             <div>
               <div>Notifications</div>
-              <div>
+              <div className="flex flex-row w-full space-x-1">
                 <div>checkbox</div>
                 <div>
                   <div>Enable referral notification</div>
