@@ -25,9 +25,9 @@ model User {
   accounts              Account[]
   isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
-  Affiliate             Affiliate[]
-  Customers             Customers[]
-  RestConsumers         RestConsumers[]
+  // Affiliate             Affiliate[]
+  // Customers             Customers[]
+  // RestConsumers         RestConsumers[]
 }
 
 model Account {
@@ -84,230 +84,230 @@ model TwoFactorConfirmation {
   @@unique([userId])
 }
 
-model AffiliateMeta {
-  meta_id      String @id @default(cuid())
-  affiliate_id String
-  meta_key     String
-  meta_value   String
+// model AffiliateMeta {
+//   meta_id      String @id @default(cuid())
+//   affiliate_id String
+//   meta_key     String
+//   meta_value   String
 
-  @@unique([meta_id])
-}
+//   @@unique([meta_id])
+// }
 
-model Affiliate {
-  affiliate_id    String      @id @default(cuid())
-  rest_id         String
-  user_id         String
-  user            User        @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  rate            String
-  rate_type       String
-  flat_rate_basis String
-  payment_email   String
-  status          String
-  earnings        Int
-  unpaid_earnings Int
-  referrals       Int
-  visits          Int
-  date_registered DateTime
-  Campaigns       Campaigns[]
-  Payouts         Payouts[]
+// model Affiliate {
+//   affiliate_id    String      @id @default(cuid())
+//   rest_id         String
+//   user_id         String
+//   user            User        @relation(fields: [user_id], references: [id], onDelete: Cascade)
+//   rate            String
+//   rate_type       String
+//   flat_rate_basis String
+//   payment_email   String
+//   status          String
+//   earnings        Int
+//   unpaid_earnings Int
+//   referrals       Int
+//   visits          Int
+//   date_registered DateTime
+//   Campaigns       Campaigns[]
+//   Payouts         Payouts[]
 
-  @@unique([affiliate_id])
-}
+//   @@unique([affiliate_id])
+// }
 
-model Campaigns {
-  campaign_id           String     @id @default(cuid())
-  affiliate_id          String
-  // arriliate       Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
-  campaign              String
-  visits                Int
-  unique_visits         Int
-  referrals             Int
-  conversion_rate       Float
-  hash                  String
-  rest_id               String
-  Affiliate             Affiliate? @relation(fields: [affiliateAffiliate_id], references: [affiliate_id])
-  affiliateAffiliate_id String?
-}
+// model Campaigns {
+//   campaign_id           String     @id @default(cuid())
+//   affiliate_id          String
+//   // arriliate       Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
+//   campaign              String
+//   visits                Int
+//   unique_visits         Int
+//   referrals             Int
+//   conversion_rate       Float
+//   hash                  String
+//   rest_id               String
+//   Affiliate             Affiliate? @relation(fields: [affiliateAffiliate_id], references: [affiliate_id])
+//   affiliateAffiliate_id String?
+// }
 
-model Connections {
-  connection_id String @id @default(cuid())
-  date          String
-  group         Int
-  creative      Int
-  affiliate     Int
+// model Connections {
+//   connection_id String @id @default(cuid())
+//   date          String
+//   group         Int
+//   creative      Int
+//   affiliate     Int
 
-  @@unique([connection_id])
-}
+//   @@unique([connection_id])
+// }
 
-model CreativeMeta {
-  meta_id     String @id @default(cuid())
-  creative_id String
-  meta_key    String
-  meta_value  String
+// model CreativeMeta {
+//   meta_id     String @id @default(cuid())
+//   creative_id String
+//   meta_key    String
+//   meta_value  String
 
-  @@unique([meta_id])
-}
+//   @@unique([meta_id])
+// }
 
-model Creative {
-  creative_id   String   @id @default(cuid())
-  name          String
-  type          String
-  description   String
-  url           String
-  text          String
-  image         String
-  attachment_id Int
-  status        String
-  date          DateTime
-  date_updated  DateTime
-  start_date    DateTime
-  end_date      DateTime
-  notes         String
+// model Creative {
+//   creative_id   String   @id @default(cuid())
+//   name          String
+//   type          String
+//   description   String
+//   url           String
+//   text          String
+//   image         String
+//   attachment_id Int
+//   status        String
+//   date          DateTime
+//   date_updated  DateTime
+//   start_date    DateTime
+//   end_date      DateTime
+//   notes         String
 
-  @@unique([creative_id])
-}
+//   @@unique([creative_id])
+// }
 
-model CustomLinks {
-  custom_link_id String   @id @default(cuid())
-  affiliate_id   String
-  link           String
-  date_created   DateTime
+// model CustomLinks {
+//   custom_link_id String   @id @default(cuid())
+//   affiliate_id   String
+//   link           String
+//   date_created   DateTime
 
-  @@unique([custom_link_id])
-}
+//   @@unique([custom_link_id])
+// }
 
-model CustomerMeta {
-  meta_id           String @id @default(cuid())
-  affwp_customer_id String
-  meta_key          String
+// model CustomerMeta {
+//   meta_id           String @id @default(cuid())
+//   affwp_customer_id String
+//   meta_key          String
 
-  @@unique([meta_id])
-}
+//   @@unique([meta_id])
+// }
 
-model Customers {
-  customer_id  String   @id @default(cuid())
-  user_id      String
-  user         User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  email        String
-  first_name   String
-  last_name    String
-  ip           String
-  date_created DateTime
+// model Customers {
+//   customer_id  String   @id @default(cuid())
+//   user_id      String
+//   user         User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+//   email        String
+//   first_name   String
+//   last_name    String
+//   ip           String
+//   date_created DateTime
 
-  @@unique([customer_id])
-}
+//   @@unique([customer_id])
+// }
 
-model Groups {
-  group_id String @id @default(cuid())
-  type     String
-  title    String
-  meta     String
+// model Groups {
+//   group_id String @id @default(cuid())
+//   type     String
+//   title    String
+//   meta     String
 
-  @@unique([group_id])
-}
+//   @@unique([group_id])
+// }
 
-model Notifications {
-  id           String   @id @default(cuid())
-  remote_id    String
-  title        String
-  content      String
-  buttons      String
-  type         String
-  conditions   String
-  start        DateTime
-  end          DateTime
-  dismissed    Int
-  date_created DateTime
-  date_updated DateTime
+// model Notifications {
+//   id           String   @id @default(cuid())
+//   remote_id    String
+//   title        String
+//   content      String
+//   buttons      String
+//   type         String
+//   conditions   String
+//   start        DateTime
+//   end          DateTime
+//   dismissed    Int
+//   date_created DateTime
+//   date_updated DateTime
 
-  @@unique([id])
-}
+//   @@unique([id])
+// }
 
-model Payouts {
-  payout_id            String    @id @default(cuid())
-  affiliate_id         String
-  affiliate            Affiliate @relation(fields: [affiliate_id], references: [affiliate_id], onDelete: Cascade)
-  referrals            String
-  amount               String
-  owner                BigInt
-  payout_method        Int
-  service_account      String
-  service_id           BigInt
-  service_invoice_link String
-  desciption           String
-  status               String
-  date                 DateTime
+// model Payouts {
+//   payout_id            String    @id @default(cuid())
+//   affiliate_id         String
+//   affiliate            Affiliate @relation(fields: [affiliate_id], references: [affiliate_id], onDelete: Cascade)
+//   referrals            String
+//   amount               String
+//   owner                BigInt
+//   payout_method        Int
+//   service_account      String
+//   service_id           BigInt
+//   service_invoice_link String
+//   desciption           String
+//   status               String
+//   date                 DateTime
 
-  @@unique([payout_id])
-}
+//   @@unique([payout_id])
+// }
 
-model ReferralMeta {
-  meta_id     String @id @default(cuid())
-  referral_id BigInt
-  meta_key    String
-  meta_value  String
+// model ReferralMeta {
+//   meta_id     String @id @default(cuid())
+//   referral_id BigInt
+//   meta_key    String
+//   meta_value  String
 
-  @@unique([meta_id])
-}
+//   @@unique([meta_id])
+// }
 
-model Referrals {
-  referral_id  String   @id @default(cuid())
-  affiliate_id String
-  visit_id     BigInt
-  rest_id      String
-  customer_id  BigInt
-  parent_id    BigInt
-  description  String
-  status       Int
-  amount       String
-  currency     String
-  custom       String
-  contest      String
-  campaign     String
-  type         String
-  flag         String
-  reference    String
-  products     String
-  payout_id    BigInt
-  date         DateTime
+// model Referrals {
+//   referral_id  String   @id @default(cuid())
+//   affiliate_id String
+//   visit_id     BigInt
+//   rest_id      String
+//   customer_id  BigInt
+//   parent_id    BigInt
+//   description  String
+//   status       Int
+//   amount       String
+//   currency     String
+//   custom       String
+//   contest      String
+//   campaign     String
+//   type         String
+//   flag         String
+//   reference    String
+//   products     String
+//   payout_id    BigInt
+//   date         DateTime
 
-  @@unique([referral_id])
-}
+//   @@unique([referral_id])
+// }
 
-model RestConsumers {
-  consumer_id String   @id @default(cuid())
-  user_id     String
-  user        User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  token       String
-  public_key  String
-  secret_key  String
-  status      String
-  date        DateTime
+// model RestConsumers {
+//   consumer_id String   @id @default(cuid())
+//   user_id     String
+//   user        User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+//   token       String
+//   public_key  String
+//   secret_key  String
+//   status      String
+//   date        DateTime
 
-  @@unique([consumer_id])
-}
+//   @@unique([consumer_id])
+// }
 
-model Sales {
-  referral_id   String @id @default(cuid())
-  affilicate_id String
+// model Sales {
+//   referral_id   String @id @default(cuid())
+//   affilicate_id String
 
-  order_total String
+//   order_total String
 
-  @@unique([referral_id])
-}
+//   @@unique([referral_id])
+// }
 
-model Visits {
-  visit_id      String   @id @default(cuid())
-  affilicate_id String
-  referral_id   String
-  rest_id       String
-  url           String
-  referrer      String
-  campaign      String
-  context       String
-  flag          String
-  ip            String
-  date          DateTime
+// model Visits {
+//   visit_id      String   @id @default(cuid())
+//   affilicate_id String
+//   referral_id   String
+//   rest_id       String
+//   url           String
+//   referrer      String
+//   campaign      String
+//   context       String
+//   flag          String
+//   ip            String
+//   date          DateTime
 
-  @@unique([visit_id])
-}
+//   @@unique([visit_id])
+// }
