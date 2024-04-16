@@ -92,7 +92,7 @@ model Affiliate {
   affiliate_id String @id @default(cuid())
   rest_id String
   user_id String
-  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  // user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
   rate String
   rate_type String
   flat_rate_basis String
@@ -109,7 +109,7 @@ model Affiliate {
 model Campaigns {
   campaign_id String @id @default(cuid())
   affiliate_id String
-  arriliate Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
+  // arriliate Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
   campaign String
   visits Int
   unique_visits Int
@@ -171,7 +171,7 @@ model CustomerMeta {
 model Customers {
   customer_id String @id @default(cuid())
   user_id String
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
   email String
   first_name String
   last_name String
@@ -187,6 +187,6 @@ model Groups {
   meta String
 }
 
-model Notifications {
+// model Notifications {
   
-}
+// }
