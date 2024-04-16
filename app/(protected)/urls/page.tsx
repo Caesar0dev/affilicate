@@ -19,14 +19,14 @@ const Urls = async () => {
           <div className="col-span-2">
             <Card className="">
               <CardHeader>
-                <div className="flex flex-row space-x-2 items-center">
+                <div className="flex flex-row items-center rounded-md border px-2">
                   <div>
                     <Link2Icon width={24} height={24} />
                   </div>
                   <Input
                     type="text"
                     defaultValue={"http://localhost/"}
-                    className="border-none focus-visible:outline-none"
+                    className="border-none focus-visible:ring-0 shadow-none"
                   />
                 </div>
               </CardHeader>
@@ -54,7 +54,16 @@ const Urls = async () => {
                 <div className="space-y-1">
                   <div className="font-bold">Generated referral URL</div>
                   <p className="text-sm">Share this URL with your audience.</p>
-                  <Input type="text" defaultValue={"http://localhost/"} />
+                  <div className="flex flex-row items-center rounded-md border px-2">
+                    <div>
+                      <Link2Icon width={24} height={24} />
+                    </div>
+                    <Input
+                      type="text"
+                      defaultValue={"http://localhost/"}
+                      className="border-none focus-visible:ring-0 shadow-none"
+                    />
+                  </div>
                 </div>
               </CardHeader>
             </Card>
