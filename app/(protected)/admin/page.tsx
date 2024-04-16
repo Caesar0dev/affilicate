@@ -6,6 +6,7 @@ import { FormSuccess } from "@/components/form-success";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { UserRole } from "@prisma/client";
+import Link from "next/link";
 import { toast } from "sonner";
 
 const AdminPage = () => {
@@ -33,7 +34,11 @@ const AdminPage = () => {
 
   return (
     <div>
-      <div>Admin Dashboard</div>
+      <div>
+        Admin Dashboard
+        <Link href={"/admin/affiliate"}>Affiliate</Link>
+        <Link href={"/admin/visits"}>Visits</Link>
+      </div>
     </div>
   );
 
