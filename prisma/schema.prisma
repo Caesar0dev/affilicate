@@ -1,8 +1,8 @@
 // prisma/schema.prisma
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  url       = "postgresql://postgres:root@localhost:5432/postgres"
+  directUrl = "postgresql://postgres:root@localhost:5432/postgres"
 }
 
 generator client {
@@ -115,16 +115,18 @@ model Affiliate {
 }
 
 model Campaigns {
-  campaign_id     String    @id @default(cuid())
-  affiliate_id    String
-  arriliate       Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
-  campaign        String
-  visits          Int
-  unique_visits   Int
-  referrals       Int
-  conversion_rate Float
-  hash            String
-  rest_id         String
+  campaign_id           String     @id @default(cuid())
+  affiliate_id          String
+  // arriliate       Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
+  campaign              String
+  visits                Int
+  unique_visits         Int
+  referrals             Int
+  conversion_rate       Float
+  hash                  String
+  rest_id               String
+  Affiliate             Affiliate? @relation(fields: [affiliateAffiliate_id], references: [affiliate_id])
+  affiliateAffiliate_id String?
 }
 
 model Connections {

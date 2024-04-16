@@ -32,6 +32,12 @@ const AdminPage = () => {
   };
 
   return (
+    <div>
+      <div>Admin Dashboard</div>
+    </div>
+  );
+
+  return (
     <Card className="m-auto">
       <CardHeader>
         <p className="text-2xl font-semibold text-center">🔑 Admin</p>
