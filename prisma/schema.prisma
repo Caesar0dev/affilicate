@@ -92,3 +92,20 @@ model AffiliateMeta {
   @@unique([meta_id])
 }
 
+model Affiliate {
+  affiliate_id String @id @default(cuid())
+  rest_id String @id @default(cuid())
+  user_id   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rate String
+  rate_type String
+  flat_rate_basis String
+  payment_email String
+  status String
+  earnings Int
+  unpaid_earnings Int
+  referrals Int
+  visits Int
+  date_registered DateTime
+  @@unique([affiliate_id])
+}
+
