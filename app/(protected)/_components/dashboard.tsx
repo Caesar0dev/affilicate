@@ -70,31 +70,26 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
       icon: <BarChartIcon />
     },
     {
-      pathname,
       path: "/graphs",
       title: "Graph",
       icon: <PieChartIcon />
     },
     {
-      pathname,
       path: "/referrals",
       title: "Referrals",
       icon: <ArchiveIcon />
     },
     {
-      pathname,
       path: "/payouts",
       title: "Payouts",
       icon: <BookmarkIcon />
     },
     {
-      pathname,
       path: "/visits",
       title: "Visits",
       icon: <CursorArrowIcon />
     },
     {
-      pathname,
       path: "/creatives",
       title: "Creatives",
       icon: <Link2Icon />
@@ -143,7 +138,7 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
               key={i}
               icon={data.icon}
               path={data.path}
-              pathname={data.pathname}
+              pathname={pathname}
               title={data.title}
               setOpen={setOpen}
             />
