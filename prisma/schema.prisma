@@ -81,3 +81,13 @@ model TwoFactorConfirmation {
 
   @@unique([userId])
 }
+
+model AffiliateMeta {
+  meta_id String @id @default(cuid())
+  affiliate_id String @id @default(cuid())
+
+  meta_key String
+  meta_value String
+
+  @@unique([meta_id])
+}
