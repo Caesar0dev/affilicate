@@ -187,6 +187,6 @@ model Groups {
   meta String
 }
 
-// model Notifications {
-  
-// }
+model Notifications {
+  id String @id @default(cuid())  
+}
