@@ -30,10 +30,7 @@ export const UserButton = () => {
       <DropdownMenuContent className="w-40 divide-y" align="end">
         {user ? (
           <>
-            <DropdownMenuItem>
-              <ExitIcon className="h-4 w-4 mr-2" />
-              Settings
-            </DropdownMenuItem>
+            <DropdownMenuItem>Signed in as {user.email}</DropdownMenuItem>
             <DropdownMenuItem>
               <ExitIcon className="h-4 w-4 mr-2" />
               Settings
