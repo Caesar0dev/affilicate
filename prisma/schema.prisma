@@ -246,3 +246,27 @@ model ReferralMeta {
 
   @@unique([meta_id])
 }
+
+model Referrals {
+  referral_id  String   @id @default(cuid())
+  affiliate_id String
+  visit_id     BigInt
+  rest_id      String
+  customer_id  BigInt
+  parent_id    BigInt
+  description  String
+  status       Int
+  amount       String
+  currency     String
+  custom       String
+  contest      String
+  campaign     String
+  type         String
+  flag         String
+  reference    String
+  products     String
+  payout_id    BigInt
+  date         DateTime
+
+  @@unique([referral_id])
+}
