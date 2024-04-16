@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { settings } from "@/actions/settings";
 import { Form, FormField, FormControl, FormItem, FormLabel, FormDescription, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
@@ -57,10 +58,32 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="grid grid-cols-4">
-      <div className="col-span-1">User Settings</div>
-      <div className="col-span-3">
-        <div></div>
+    <div className="p-6 space-y-4">
+      <div className="text-3xl font-medium">Settings</div>
+      <div className="grid grid-cols-4">
+        <div className="col-span-1">User Settings</div>
+        <div className="col-span-3">
+          <div>
+            <div>Payment</div>
+            <div>
+              <Label htmlFor="payment_email">Payment Email</Label>
+              <Input value={user?.email || ""} />
+            </div>
+            <div>
+              <div>Notifications</div>
+              <div>
+                <div>checkbox</div>
+                <div>
+                  <div>Enable referral notification</div>
+                  <div>Receive a notification a referral is generated</div>
+                </div>
+              </div>
+              <div>
+                <Button>Save user settings</Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     // <Card className="w-[600px] my-6 mx-auto">
