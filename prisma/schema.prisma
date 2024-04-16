@@ -91,3 +91,4 @@ model AffiliateMeta {
 
   @@unique([meta_id])
 }
+
