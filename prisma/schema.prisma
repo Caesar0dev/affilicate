@@ -26,6 +26,7 @@ model User {
   isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
   Affiliate             Affiliate[]
+  Customers             Customers[]
 }
 
 model Account {
@@ -92,10 +93,10 @@ model AffiliateMeta {
 }
 
 model Affiliate {
-  affiliate_id    String   @id @default(cuid())
+  affiliate_id    String      @id @default(cuid())
   rest_id         String
   user_id         String
-  user            User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user            User        @relation(fields: [user_id], references: [id], onDelete: Cascade)
   rate            String
   rate_type       String
   flat_rate_basis String
@@ -106,6 +107,8 @@ model Affiliate {
   referrals       Int
   visits          Int
   date_registered DateTime
+  Campaigns       Campaigns[]
+  Payouts         Payouts[]
 
   @@unique([affiliate_id])
 }
@@ -113,7 +116,7 @@ model Affiliate {
 model Campaigns {
   campaign_id     String    @id @default(cuid())
   affiliate_id    String
-  arriliate       Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
+  arriliate       Affiliate @relation(fields: [affiliate_id], references: [affiliate_id], onDelete: Cascade)
   campaign        String
   visits          Int
   unique_visits   Int
@@ -129,6 +132,8 @@ model Connections {
   group         Int
   creative      Int
   affiliate     Int
+
+  @@unique([connection_id])
 }
 
 model CreativeMeta {
@@ -212,5 +217,17 @@ model Notifications {
 }
 
 model Payouts {
-  payout_id BigInt
+  payout_id            String    @id @default(cuid())
+  affiliate_id         String
+  affiliate            Affiliate @relation(fields: [affiliate_id], references: [affiliate_id], onDelete: Cascade)
+  referrals            String
+  amount               String
+  owner                BigInt
+  payout_method        Int
+  service_account      String
+  service_id           BigInt
+  service_invoice_link String
+  desciption           String
+  status               String
+  date                 DateTime
 }
