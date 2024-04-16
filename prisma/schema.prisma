@@ -27,6 +27,7 @@ model User {
   twoFactorConfirmation TwoFactorConfirmation?
   Affiliate             Affiliate[]
   Customers             Customers[]
+  RestConsumers         RestConsumers[]
 }
 
 model Account {
@@ -267,6 +268,28 @@ model Referrals {
   products     String
   payout_id    BigInt
   date         DateTime
+
+  @@unique([referral_id])
+}
+
+model RestConsumers {
+  consumer_id String   @id @default(cuid())
+  user_id     String
+  user        User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  token       String
+  public_key  String
+  secret_key  String
+  status      String
+  date        DateTime
+
+  @@unique([consumer_id])
+}
+
+model Sales {
+  referral_id   String @id @default(cuid())
+  affilicate_id String
+
+  order_total String
 
   @@unique([referral_id])
 }
