@@ -63,17 +63,17 @@ const SettingsPage = () => {
       <div className="text-3xl font-medium">Settings</div>
       <div className="grid grid-cols-4">
         <div className="col-span-1">User Settings</div>
-        <div className="col-span-3">
-          <div className="border rounded-md p-2 space-y-4 pt-4">
-            <div className="text-xl">Payment</div>
-            <div>
+        <div className="col-span-3 border rounded-lg">
+          <div className="pt-6 space-y-4">
+            <div className="text-xl px-6">Payment</div>
+            <div className="px-6">
               <Label htmlFor="payment_email">Payment Email</Label>
               <Input value={user?.email || ""} />
             </div>
-            <div>
+            <div className="px-6">
               <div>Notifications</div>
-              <div className="flex flex-row w-full space-x-1">
-                <div>
+              <div className="flex flex-row w-full space-x-2">
+                <div className="mt-1">
                   <Checkbox />
                 </div>
                 <div>
@@ -82,9 +82,9 @@ const SettingsPage = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div>
-            <Button>Save user settings</Button>
+            <div className="bg-gray-50 px-6 py-4">
+              <Button>Save user settings</Button>
+            </div>
           </div>
         </div>
       </div>
