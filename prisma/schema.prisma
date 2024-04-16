@@ -25,9 +25,6 @@ model User {
   accounts              Account[]
   isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
-  // Affiliate             Affiliate[]
-  // Customers             Customers[]
-  // RestConsumers         RestConsumers[]
 }
 
 model Account {
