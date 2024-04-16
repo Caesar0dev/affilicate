@@ -1,8 +1,8 @@
 // prisma/schema.prisma
 datasource db {
   provider  = "postgresql"
-  url       = "postgresql://postgres:root@localhost:5432/postgres"
-  directUrl = "postgresql://postgres:root@localhost:5432/postgres"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
