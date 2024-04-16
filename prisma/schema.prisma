@@ -154,6 +154,14 @@ model Creative {
 }
 
 model CustomLinks {
+  custom_link_id String @id @default(cuid())
+  affiliate_id String @id @default(cuid())
+  link String
+  date_created DateTime
+  @@unique([creative_id])
+}
+
+model Creative {
   creative_id String @id @default(cuid())
   name String @id @default(cuid())
   type String
@@ -170,4 +178,3 @@ model CustomLinks {
   notes String
   @@unique([creative_id])
 }
-
