@@ -117,7 +117,7 @@ model Affiliate {
 model Campaigns {
   campaign_id     String    @id @default(cuid())
   affiliate_id    String
-  arriliate       Affiliate @relation(fields: [affiliate_id], references: [affiliate_id], onDelete: Cascade)
+  arriliate       Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
   campaign        String
   visits          Int
   unique_visits   Int
