@@ -85,10 +85,8 @@ model TwoFactorConfirmation {
 model AffiliateMeta {
   meta_id String @id @default(cuid())
   affiliate_id String @id @default(cuid())
-
   meta_key String
   meta_value String
-
   @@unique([meta_id])
 }
 
@@ -127,5 +125,13 @@ model Connections {
   group Int
   creative Int
   affiliate Int
+}
+
+model CreativeMeta {
+  meta_id String @id @default(cuid())
+  creative_id String @id @default(cuid())
+  meta_key String
+  meta_value String
+  @@unique([meta_id])
 }
 
