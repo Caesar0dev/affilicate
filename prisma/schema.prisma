@@ -1,7 +1,7 @@
 // prisma/schema.prisma
 datasource db {
   provider  = "postgresql"
-  url  	    = env("DATABASE_URL")
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
@@ -15,31 +15,32 @@ enum UserRole {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  role          UserRole @default(USER)
-  accounts      Account[]
-  isTwoFactorEnabled Boolean @default(false)
+  id                    String                 @id @default(cuid())
+  name                  String?
+  email                 String?                @unique
+  emailVerified         DateTime?
+  image                 String?
+  password              String?
+  role                  UserRole               @default(USER)
+  accounts              Account[]
+  isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
+  Affiliate             Affiliate[]
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -47,146 +48,169 @@ model Account {
 }
 
 model VerificationToken {
-  id String @id @default(cuid())
-  email String
-  token String @unique
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
   expires DateTime
 
   @@unique([email, token])
 }
 
 model PasswordResetToken {
-  id String @id @default(cuid())
-  email String
-  token String @unique
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
   expires DateTime
 
   @@unique([email, token])
 }
 
 model TwoFactorToken {
-  id String @id @default(cuid())
-  email String
-  token String @unique
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
   expires DateTime
 
   @@unique([email, token])
 }
 
 model TwoFactorConfirmation {
-  id String @id @default(cuid())
+  id     String @id @default(cuid())
   userId String
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@unique([userId])
 }
 
 model AffiliateMeta {
-  meta_id String @id @default(cuid())
+  meta_id      String @id @default(cuid())
   affiliate_id String
-  meta_key String
-  meta_value String
+  meta_key     String
+  meta_value   String
+
   @@unique([meta_id])
 }
 
 model Affiliate {
-  affiliate_id String @id @default(cuid())
-  rest_id String
-  user_id String
-  // user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  rate String
-  rate_type String
+  affiliate_id    String   @id @default(cuid())
+  rest_id         String
+  user_id         String
+  user            User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  rate            String
+  rate_type       String
   flat_rate_basis String
-  payment_email String
-  status String
-  earnings Int
+  payment_email   String
+  status          String
+  earnings        Int
   unpaid_earnings Int
-  referrals Int
-  visits Int
+  referrals       Int
+  visits          Int
   date_registered DateTime
+
   @@unique([affiliate_id])
 }
 
 model Campaigns {
-  campaign_id String @id @default(cuid())
-  affiliate_id String
-  // arriliate Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
-  campaign String
-  visits Int
-  unique_visits Int
-  referrals Int
+  campaign_id     String    @id @default(cuid())
+  affiliate_id    String
+  arriliate       Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
+  campaign        String
+  visits          Int
+  unique_visits   Int
+  referrals       Int
   conversion_rate Float
-  hash String
-  rest_id String
+  hash            String
+  rest_id         String
 }
 
 model Connections {
   connection_id String @id @default(cuid())
-  date String
-  group Int
-  creative Int
-  affiliate Int
+  date          String
+  group         Int
+  creative      Int
+  affiliate     Int
 }
 
 model CreativeMeta {
-  meta_id String @id @default(cuid())
+  meta_id     String @id @default(cuid())
   creative_id String
-  meta_key String
-  meta_value String
+  meta_key    String
+  meta_value  String
+
   @@unique([meta_id])
 }
 
 model Creative {
-  creative_id String @id @default(cuid())
-  name String
-  type String
-  description String
-  url String
-  text String
-  image String
+  creative_id   String   @id @default(cuid())
+  name          String
+  type          String
+  description   String
+  url           String
+  text          String
+  image         String
   attachment_id Int
-  status String
-  date DateTime
-  date_updated DateTime
-  start_date DateTime
-  end_date DateTime
-  notes String
+  status        String
+  date          DateTime
+  date_updated  DateTime
+  start_date    DateTime
+  end_date      DateTime
+  notes         String
+
   @@unique([creative_id])
 }
 
 model CustomLinks {
-  custom_link_id String @id @default(cuid())
-  affiliate_id String
-  link String
-  date_created DateTime
+  custom_link_id String   @id @default(cuid())
+  affiliate_id   String
+  link           String
+  date_created   DateTime
+
   @@unique([custom_link_id])
 }
 
 model CustomerMeta {
-  meta_id String @id @default(cuid())
+  meta_id           String @id @default(cuid())
   affwp_customer_id String
-  meta_key String
+  meta_key          String
+
   @@unique([meta_id])
 }
 
 model Customers {
-  customer_id String @id @default(cuid())
-  user_id String
-  // user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  email String
-  first_name String
-  last_name String
-  ip String
+  customer_id  String   @id @default(cuid())
+  user_id      String
+  user         User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  email        String
+  first_name   String
+  last_name    String
+  ip           String
   date_created DateTime
+
   @@unique([customer_id])
 }
 
 model Groups {
   group_id String @id @default(cuid())
-  type String
-  title String
-  meta String
+  type     String
+  title    String
+  meta     String
 }
 
 model Notifications {
-  id String @id @default(cuid())  
+  id           String   @id @default(cuid())
+  remote_id    String
+  title        String
+  content      String
+  buttons      String
+  type         String
+  conditions   String
+  start        DateTime
+  end          DateTime
+  dismissed    Int
+  date_created DateTime
+  date_updated DateTime
+}
+
+model Payouts {
+  payout_id BigInt
 }
