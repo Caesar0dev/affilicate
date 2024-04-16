@@ -75,16 +75,14 @@ model TwoFactorToken {
 
 model TwoFactorConfirmation {
   id String @id @default(cuid())
-
   userId String
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
   @@unique([userId])
 }
 
 model AffiliateMeta {
   meta_id String @id @default(cuid())
-  affiliate_id String @id @default(cuid())
+  affiliate_id String
   meta_key String
   meta_value String
   @@unique([meta_id])
@@ -92,8 +90,9 @@ model AffiliateMeta {
 
 model Affiliate {
   affiliate_id String @id @default(cuid())
-  rest_id String @id @default(cuid())
-  user_id user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rest_id String
+  user_id String
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
   rate String
   rate_type String
   flat_rate_basis String
@@ -109,7 +108,8 @@ model Affiliate {
 
 model Campaigns {
   campaign_id String @id @default(cuid())
-  affiliate_id Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
+  affiliate_id String
+  arriliate Affiliate @relation(fields: [affiliate_id], references: [id], onDelete: Cascade)
   campaign String
   visits Int
   unique_visits Int
@@ -129,7 +129,7 @@ model Connections {
 
 model CreativeMeta {
   meta_id String @id @default(cuid())
-  creative_id String @id @default(cuid())
+  creative_id String
   meta_key String
   meta_value String
   @@unique([meta_id])
@@ -137,7 +137,7 @@ model CreativeMeta {
 
 model Creative {
   creative_id String @id @default(cuid())
-  name String @id @default(cuid())
+  name String
   type String
   description String
   url String
@@ -155,44 +155,38 @@ model Creative {
 
 model CustomLinks {
   custom_link_id String @id @default(cuid())
-  affiliate_id String @id @default(cuid())
+  affiliate_id String
   link String
   date_created DateTime
-  @@unique([creative_id])
+  @@unique([custom_link_id])
 }
 
 model CustomerMeta {
   meta_id String @id @default(cuid())
   affwp_customer_id String
-  meta_key String
-  meta_key String
-  @@unique([meta_id])
-}
-
-model CustomerMeta {
-  meta_id String @id @default(cuid())
-  affwp_customer_id String
-  meta_key String
   meta_key String
   @@unique([meta_id])
 }
 
 model Customers {
   customer_id String @id @default(cuid())
-  user_id user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user_id String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   email String
   first_name String
   last_name String
   ip String
   date_created DateTime
+  @@unique([customer_id])
 }
 
 model Groups {
-  customer_id String @id @default(cuid())
-  user_id user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  email String
-  first_name String
-  last_name String
-  ip String
-  date_created DateTime
+  group_id String @id @default(cuid())
+  type String
+  title String
+  meta String
+}
+
+model Notifications {
+  
 }
