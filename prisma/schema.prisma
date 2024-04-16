@@ -161,20 +161,10 @@ model CustomLinks {
   @@unique([creative_id])
 }
 
-model Creative {
-  creative_id String @id @default(cuid())
-  name String @id @default(cuid())
-  type String
-  description String
-  url String
-  text String
-  image String
-  attachment_id Int
-  status String
-  date DateTime
-  date_updated DateTime
-  start_date DateTime
-  end_date DateTime
-  notes String
-  @@unique([creative_id])
+model CustomerMeta {
+  meta_id String @id @default(cuid())
+  affwp_customer_id String
+  meta_key String
+  meta_key String
+  @@unique([meta_id])
 }
