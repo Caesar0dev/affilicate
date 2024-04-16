@@ -1,6 +1,7 @@
 import { currentUser } from "@/lib/auth";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Link2Icon } from "@radix-ui/react-icons";
 
 const Urls = async () => {
   const user = await currentUser();
@@ -18,7 +19,16 @@ const Urls = async () => {
           <div className="col-span-2">
             <Card className="">
               <CardHeader>
-                <Input type="text" defaultValue={"http://localhost/"} />
+                <div className="flex flex-row space-x-2 items-center">
+                  <div>
+                    <Link2Icon width={24} height={24} />
+                  </div>
+                  <Input
+                    type="text"
+                    defaultValue={"http://localhost/"}
+                    className="border-none focus-visible:outline-none"
+                  />
+                </div>
               </CardHeader>
             </Card>
           </div>
