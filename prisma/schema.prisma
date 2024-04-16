@@ -152,3 +152,22 @@ model Creative {
   notes String
   @@unique([creative_id])
 }
+
+model CustomLinks {
+  creative_id String @id @default(cuid())
+  name String @id @default(cuid())
+  type String
+  description String
+  url String
+  text String
+  image String
+  attachment_id Int
+  status String
+  date DateTime
+  date_updated DateTime
+  start_date DateTime
+  end_date DateTime
+  notes String
+  @@unique([creative_id])
+}
+
