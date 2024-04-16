@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { SettingsSchema } from "@/schemas";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -72,16 +73,18 @@ const SettingsPage = () => {
             <div>
               <div>Notifications</div>
               <div className="flex flex-row w-full space-x-1">
-                <div>checkbox</div>
+                <div>
+                  <Checkbox />
+                </div>
                 <div>
                   <div>Enable referral notification</div>
                   <div>Receive a notification a referral is generated</div>
                 </div>
               </div>
-              <div>
-                <Button>Save user settings</Button>
-              </div>
             </div>
+          </div>
+          <div>
+            <Button>Save user settings</Button>
           </div>
         </div>
       </div>
