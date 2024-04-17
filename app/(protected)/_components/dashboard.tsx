@@ -15,6 +15,7 @@ import {
   CursorArrowIcon,
   Cross1Icon
 } from "@radix-ui/react-icons";
+import { useCurrentRole } from "@/hooks/use-current-role";
 interface ProtectedLayoutProps {
   children: React.ReactNode;
 }
@@ -40,6 +41,7 @@ const NavTab = ({ title, path, pathname, icon, setOpen }: NavTabType) => {
 
 export const Dashboard = ({ children }: ProtectedLayoutProps) => {
   const pathname = usePathname();
+  const role = useCurrentRole();
 
   const [open, setOpen] = useState<Boolean>(false);
 
@@ -53,72 +55,77 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
     );
   }, []);
 
-  const navData = [
-    {
-      path: "/dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />
-    },
-    {
-      path: "/urls",
-      title: "Affiliate URLs",
-      icon: <HomeIcon />
-    },
-    {
-      path: "/statistics",
-      title: "Statistics",
-      icon: <BarChartIcon />
-    },
-    {
-      path: "/graphs",
-      title: "Graph",
-      icon: <PieChartIcon />
-    },
-    {
-      path: "/referrals",
-      title: "Referrals",
-      icon: <ArchiveIcon />
-    },
-    {
-      path: "/payouts",
-      title: "Payouts",
-      icon: <BookmarkIcon />
-    },
-    {
-      path: "/visits",
-      title: "Visits",
-      icon: <CursorArrowIcon />
-    },
-    {
-      path: "/creatives",
-      title: "Creatives",
-      icon: <Link2Icon />
-    }
-    // {
-    //   pathname,
-    //   path: "/server",
-    //   title: "Server",
-    //   icon: <HomeIcon />
-    // },
-    // {
-    //   pathname,
-    //   path: "/client",
-    //   title: "Client",
-    //   icon: <Link2Icon />
-    // },
-    // {
-    //   pathname,
-    //   path: "/admin",
-    //   title: "Admin",
-    //   icon: <PieChartIcon />
-    // },
-    // {
-    //   pathname,
-    //   path: "/settings",
-    //   title: "Settings",
-    //   icon: <BarChartIcon />
-    // }
-  ];
+  console.log(role);
+
+  const navData =
+    role === "ADMIN"
+      ? [
+          {
+            path: "/dashboard",
+            title: "Dashboard",
+            icon: <DashboardIcon />
+          },
+          {
+            path: "/urls",
+            title: "Affiliate URLs",
+            icon: <HomeIcon />
+          },
+          {
+            path: "/statistics",
+            title: "Statistics",
+            icon: <BarChartIcon />
+          },
+          {
+            path: "/graphs",
+            title: "Graph",
+            icon: <PieChartIcon />
+          },
+          {
+            path: "/referrals",
+            title: "Referrals",
+            icon: <ArchiveIcon />
+          },
+          {
+            path: "/payouts",
+            title: "Payouts",
+            icon: <BookmarkIcon />
+          },
+          {
+            path: "/visits",
+            title: "Visits",
+            icon: <CursorArrowIcon />
+          },
+          {
+            path: "/creatives",
+            title: "Creatives",
+            icon: <Link2Icon />
+          }
+          // {
+          //   pathname,
+          //   path: "/server",
+          //   title: "Server",
+          //   icon: <HomeIcon />
+          // },
+          // {
+          //   pathname,
+          //   path: "/client",
+          //   title: "Client",
+          //   icon: <Link2Icon />
+          // },
+          // {
+          //   pathname,
+          //   path: "/admin",
+          //   title: "Admin",
+          //   icon: <PieChartIcon />
+          // },
+          // {
+          //   pathname,
+          //   path: "/settings",
+          //   title: "Settings",
+          //   icon: <BarChartIcon />
+          // }
+        ]
+      : [];
 
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
