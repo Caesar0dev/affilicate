@@ -36,9 +36,10 @@ const AdminPage = () => {
     <div>
       <div>
         Admin Dashboard
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full space-y-6">
           <Link href={"/admin/affiliate"}>Affiliate</Link>
           <Link href={"/admin/visits"}>Visits</Link>
+          <Link href={"/admin/affiliate"}>Counter</Link>
         </div>
       </div>
     </div>
