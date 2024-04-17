@@ -37,13 +37,10 @@ export default function PayoutTable({ data }: { data: PayoutType[] }) {
             <TableCell>{row.affiliate}</TableCell>
             <TableCell>{row.referrals}</TableCell>
             <TableCell>{row.generated}</TableCell>
-            <TableCell>${row.method.toString()}</TableCell>
-            <TableCell>{row.rate.toString()}%</TableCell>
-            <TableCell>${row.paidRef.toString()}</TableCell>
-            <TableCell>${row.unpaidRef.toString()}</TableCell>
-            <TableCell>{row.visits.toString()}</TableCell>
-            <TableCell>{row?.id_verify?.toString()?.slice(0, 10)}</TableCell>
-            <TableCell>{row.status ? "Active" : "Deactivate"}</TableCell>
+            <TableCell>{row.method}</TableCell>
+            <TableCell>{row.account}</TableCell>
+            <TableCell>{row.date.toString().slice(0, 10)}</TableCell>
+            <TableCell>{row.action ? "Active" : "Deactivate"}</TableCell>
           </TableRow>
         ))}
       </TableBody>
