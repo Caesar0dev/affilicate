@@ -24,9 +24,11 @@ const Creatives = async () => {
   return (
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">admin affiliate</div>
-      <div>
+      <div className="space-x-2">
         <Button>Add new</Button>
-        <Button>Add new</Button>
+        <Button>Manage group</Button>
+        <Button>Manage groups</Button>
+        <Button>Reports</Button>
       </div>
 
       <div>
