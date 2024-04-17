@@ -17,7 +17,7 @@ const Creatives = async () => {
       <div className="text-2xl font-bold">admin creative</div>
 
       <div>
-        <div>No admin creatives found.</div>
+        <div>No admin dddddashboard found.</div>
       </div>
     </div>
   );

@@ -131,8 +131,6 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
           }
         ];
 
-  console.log(navData);
-
   return (
     <div className="h-full w-full flex flex-row overflow-hidden">
       <div
