@@ -21,7 +21,7 @@ const Creatives = async () => {
 
   return (
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
-      <div className="text-2xl font-bold">admin payout</div>
+      <div className="text-2xl font-bold">Payout</div>
 
       <div>
         <PayoutTable data={data} />
