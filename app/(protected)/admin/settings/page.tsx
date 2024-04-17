@@ -15,10 +15,18 @@ const Setting = async () => {
             <div>License key</div>
           </div>
           <div className="col-span-3">
-            <Input />
-            <Button>Deactivate License</Button>
-            <span></span>
+            <div>
+              <Input />
+              <Button>Deactivate License</Button>
+              <span></span>
+            </div>
+            <div>
+              <Button>Lunch Setup Wizard</Button>
+            </div>
           </div>
+        </div>
+        <div className="grid grid-cols-4">
+          <div className="col-span-1">Setup wizard</div>
         </div>
       </div>
     </div>
