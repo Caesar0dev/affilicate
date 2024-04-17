@@ -20,10 +20,18 @@ export default function AffiliateTable({ data }: { data: PayoutType[] }) {
     <Table className="rounded-md overflow-hidden">
       <TableHeader className="bg-gray-50 shadow-md">
         <TableRow>
-          <TableHead>DATE</TableHead>
-          <TableHead>AMOUNT</TableHead>
-          <TableHead>PAYOUT METHOD</TableHead>
-          <TableHead>STATUS</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>ID</TableHead>
+          <TableHead>Group</TableHead>
+          <TableHead>Username</TableHead>
+          <TableHead>Paid Earnings</TableHead>
+          <TableHead>Unpaid Earnings</TableHead>
+          <TableHead>Rate</TableHead>
+          <TableHead>Paid Referrals</TableHead>
+          <TableHead>Unpaid Referrals</TableHead>
+          <TableHead>Visits</TableHead>
+          <TableHead>ID verification</TableHead>
+          <TableHead>Status</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
