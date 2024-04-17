@@ -46,17 +46,12 @@ export default function AffiliateTable({ data }: { data: AffiliateType[] }) {
             <TableCell>{row.rate.toString()}%</TableCell>
             <TableCell>${row.paidRef.toString()}</TableCell>
             <TableCell>${row.unpaidRef.toString()}</TableCell>
+            <TableCell>{row.visits.toString()}</TableCell>
             <TableCell>{row?.id_verify?.toString()?.slice(0, 10)}</TableCell>
             <TableCell>{row.status ? "Active" : "Deactivate"}</TableCell>
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter>
     </Table>
   );
 }

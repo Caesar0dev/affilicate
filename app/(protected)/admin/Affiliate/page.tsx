@@ -1,5 +1,6 @@
 import { currentUser } from "@/lib/auth";
 import AffiliateTable from "@/components/admin/affiliate/Table";
+import { Button } from "@/components/ui/button";
 
 const data = [
   {
@@ -23,6 +24,10 @@ const Creatives = async () => {
   return (
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">admin affiliate</div>
+      <div>
+        <Button>Add new</Button>
+        <Button>Add new</Button>
+      </div>
 
       <div>
         <AffiliateTable data={data} />
