@@ -30,12 +30,12 @@ export default function VisitTable({ data }: { data: VisitType[] }) {
         {data.map((row: VisitType, i: number) => (
           <TableRow key={i}>
             <TableCell className="font-medium">{row.id}</TableCell>
-            <TableCell>{row.amount.toString()}</TableCell>
+            <TableCell>{row.landing}</TableCell>
+            <TableCell>{row.url}</TableCell>
+            <TableCell>{row.ip}</TableCell>
+            <TableCell>{row.converted}</TableCell>
+            <TableCell>{row.refId}</TableCell>
             <TableCell>{row.affiliate}</TableCell>
-            <TableCell>{row.referrals}</TableCell>
-            <TableCell>{row.generated}</TableCell>
-            <TableCell>{row.method}</TableCell>
-            <TableCell>{row.account}</TableCell>
             <TableCell>{row.date.toISOString().slice(0, 10)}</TableCell>
           </TableRow>
         ))}
