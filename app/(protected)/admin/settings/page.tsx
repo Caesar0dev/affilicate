@@ -1,15 +1,8 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { currentUser } from "@/lib/auth";
 
-const creatives = [
-  {
-    url: "http://localhost",
-    ref: "reference url",
-    convert: "convert",
-    date: new Date()
-  }
-];
-
-const Creatives = async () => {
+const Setting = async () => {
   const user = await currentUser();
 
   return (
@@ -17,10 +10,19 @@ const Creatives = async () => {
       <div className="text-2xl font-bold">Settings</div>
 
       <div>
-        <div>No admin creatives found.</div>
+        <div className="grid grid-cols-4">
+          <div className="col-span-1">
+            <div>License key</div>
+          </div>
+          <div className="col-span-3">
+            <Input />
+            <Button>Deactivate License</Button>
+            <span></span>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Creatives;
+export default Setting;
