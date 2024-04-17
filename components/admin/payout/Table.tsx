@@ -10,7 +10,7 @@ interface PayoutType {
   account: String;
   status: Boolean;
   date: Date;
-  action: Boolean;
+  action: String;
 }
 
 export default function PayoutTable({ data }: { data: PayoutType[] }) {
@@ -39,8 +39,8 @@ export default function PayoutTable({ data }: { data: PayoutType[] }) {
             <TableCell>{row.generated}</TableCell>
             <TableCell>{row.method}</TableCell>
             <TableCell>{row.account}</TableCell>
-            <TableCell>{row.date.toString().slice(0, 10)}</TableCell>
-            <TableCell>{row.action ? "Active" : "Deactivate"}</TableCell>
+            <TableCell>{row.date.toISOString().slice(0, 10)}</TableCell>
+            <TableCell>{row.action}</TableCell>
           </TableRow>
         ))}
       </TableBody>

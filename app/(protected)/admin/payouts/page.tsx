@@ -1,4 +1,20 @@
 import { currentUser } from "@/lib/auth";
+import PayoutTable from "@/components/admin/payout/Table";
+
+const data = [
+  {
+    id: " String",
+    amount: 64,
+    affiliate: "String",
+    referrals: "String",
+    generated: "String",
+    method: "String",
+    account: "String",
+    status: false,
+    date: new Date(),
+    action: "true"
+  }
+];
 
 const Creatives = async () => {
   const user = await currentUser();
@@ -8,7 +24,7 @@ const Creatives = async () => {
       <div className="text-2xl font-bold">admin payout</div>
 
       <div>
-        <div>No admin payout.</div>
+        <PayoutTable data={data} />
       </div>
     </div>
   );
