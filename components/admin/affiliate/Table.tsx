@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
-interface PayoutType {
+interface AffiliateType {
   name: String;
   id: String;
   group: String;
@@ -8,14 +8,14 @@ interface PayoutType {
   paid: Number;
   unpaid: Number;
   rate: Number;
-  paidRef: String;
-  unpaidRef: String;
+  paidRef: Number;
+  unpaidRef: Number;
   visits: Number;
   id_verify?: Date;
   status: Boolean;
 }
 
-export default function AffiliateTable({ data }: { data: PayoutType[] }) {
+export default function AffiliateTable({ data }: { data: AffiliateType[] }) {
   return (
     <Table className="rounded-md overflow-hidden">
       <TableHeader className="bg-gray-50 shadow-md">
@@ -35,7 +35,7 @@ export default function AffiliateTable({ data }: { data: PayoutType[] }) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row: PayoutType, i: number) => (
+        {data.map((row: AffiliateType, i: number) => (
           <TableRow key={i}>
             <TableCell className="font-medium">{row.name}</TableCell>
             <TableCell>{row.id}</TableCell>

@@ -1,5 +1,21 @@
 import { currentUser } from "@/lib/auth";
-import Table from "@/components/admin/affiliate/Table";
+import AffiliateTable from "@/components/admin/affiliate/Table";
+
+const data = [
+  {
+    name: "String",
+    id: "String",
+    group: "String",
+    username: "String",
+    paid: 5,
+    unpaid: 3,
+    rate: 53,
+    paidRef: 42,
+    unpaidRef: 53,
+    visits: 6734,
+    status: true
+  }
+];
 
 const Creatives = async () => {
   const user = await currentUser();
@@ -8,7 +24,9 @@ const Creatives = async () => {
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">admin affiliate</div>
 
-      <div>{}</div>
+      <div>
+        <AffiliateTable data={data} />
+      </div>
     </div>
   );
 };
