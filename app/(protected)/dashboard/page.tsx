@@ -107,7 +107,15 @@ const ServerPage = async () => {
         <div className="font-bold text-xl">Last 30 days</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {Last30.map((data, i) => (
-            <Card1 key={i} icon={data.icon} amount={data.amount} rate={data.rate} title={data.title} view={data.view} />
+            <Card1
+              key={i}
+              icon={data.icon}
+              amount={data.amount}
+              rate={data.rate}
+              title={data.title}
+              view={data.view}
+              href={data?.href}
+            />
           ))}
         </div>
       </div>
@@ -116,7 +124,14 @@ const ServerPage = async () => {
         <div className="font-bold text-xl">All-time</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {AllTime.map((data, i) => (
-            <Card1 key={i} icon={data.icon} amount={data.amount} title={data.title} view={data.view} />
+            <Card1
+              key={i}
+              icon={data.icon}
+              amount={data.amount}
+              title={data.title}
+              view={data.view}
+              href={data?.href}
+            />
           ))}
         </div>
       </div>

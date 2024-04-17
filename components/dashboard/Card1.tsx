@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { clsx } from "clsx/lite";
 import { ArrowUpIcon, ArrowDownIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 interface Card1Type {
   icon: any;
@@ -9,9 +10,10 @@ interface Card1Type {
   amount: number | string;
   rate?: number;
   view: boolean;
+  href?: String;
 }
 
-export default function Card1({ icon, title, amount, rate, view }: Card1Type) {
+export default function Card1({ icon, title, amount, rate, view, href }: Card1Type) {
   return (
     <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md">
       <div className="p-4 flex flex-row w-full space-x-4 items-center">
