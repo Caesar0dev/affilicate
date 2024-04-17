@@ -2,16 +2,15 @@ import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, Table
 
 interface PayoutType {
   id: String;
-  group: String;
-  username: String;
-  paid: Number;
-  unpaid: Number;
-  rate: Number;
-  paidRef: Number;
-  unpaidRef: Number;
-  visits: Number;
-  id_verify?: Date;
+  amount: Number;
+  affiliate: String;
+  referrals: String;
+  generated: String;
+  method: String;
+  account: String;
   status: Boolean;
+  date: Date;
+  action: Boolean;
 }
 
 export default function PayoutTable({ data }: { data: PayoutType[] }) {
@@ -33,12 +32,12 @@ export default function PayoutTable({ data }: { data: PayoutType[] }) {
       <TableBody>
         {data.map((row: PayoutType, i: number) => (
           <TableRow key={i}>
-            <TableCell className="font-medium">{row.name}</TableCell>
-            <TableCell>{row.id}</TableCell>
-            <TableCell>{row.group}</TableCell>
-            <TableCell>{row.username}</TableCell>
-            <TableCell>${row.paid.toString()}</TableCell>
-            <TableCell>${row.unpaid.toString()}</TableCell>
+            <TableCell className="font-medium">{row.id}</TableCell>
+            <TableCell>{row.amount.toString()}</TableCell>
+            <TableCell>{row.affiliate}</TableCell>
+            <TableCell>{row.referrals}</TableCell>
+            <TableCell>{row.generated}</TableCell>
+            <TableCell>${row.method.toString()}</TableCell>
             <TableCell>{row.rate.toString()}%</TableCell>
             <TableCell>${row.paidRef.toString()}</TableCell>
             <TableCell>${row.unpaidRef.toString()}</TableCell>
