@@ -150,11 +150,6 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
             icon: <DashboardIcon />
           },
           {
-            path: "/admin/settings",
-            title: "Settings",
-            icon: <DashboardIcon />
-          },
-          {
             path: "/admin/reports",
             title: "Reports",
             icon: <DashboardIcon />
@@ -167,6 +162,11 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
           {
             path: "/admin/visits",
             title: "Visits",
+            icon: <DashboardIcon />
+          },
+          {
+            path: "/admin/addon",
+            title: "Addon",
             icon: <DashboardIcon />
           }
         ];
