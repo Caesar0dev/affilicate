@@ -10,8 +10,8 @@ interface PayoutType {
   rate: Number;
   paidRef: String;
   unpaidRef: String;
-  visits: String;
-  IDV: String;
+  visits: Number;
+  id_verify?: Date;
   status: Boolean;
 }
 
@@ -34,6 +34,11 @@ export default function AffiliateTable({ data }: { data: PayoutType[] }) {
             <TableCell>{row.group}</TableCell>
             <TableCell>{row.username}</TableCell>
             <TableCell>${row.paid.toString()}</TableCell>
+            <TableCell>${row.unpaid.toString()}</TableCell>
+            <TableCell>{row.rate.toString()}%</TableCell>
+            <TableCell>${row.paidRef.toString()}</TableCell>
+            <TableCell>${row.unpaidRef.toString()}</TableCell>
+            <TableCell>{row?.id_verify?.toString()?.slice(0, 10)}</TableCell>
             <TableCell>{row.status ? "Active" : "Deactivate"}</TableCell>
           </TableRow>
         ))}
