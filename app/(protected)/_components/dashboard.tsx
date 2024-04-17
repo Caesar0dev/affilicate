@@ -125,7 +125,8 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
       <div
         className={clsx(
           "bg-gray-700 text-white h-screen space-y-4 max-md:hidden md:w-60 md:min-w-60 overflow-y-auto ease-in-out duration-300",
-          open && "max-md:!block fixed top-0 left-0 !w-60 z-10"
+          open && "max-md:!block fixed top-0 left-0 !w-60 z-10",
+          pathname === "/admin" && "hidden"
         )}
       >
         <div className="w-full flex flex-row items-center p-4 relative">
