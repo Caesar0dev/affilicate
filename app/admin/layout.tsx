@@ -9,7 +9,9 @@ interface ProtectedLayoutProps {
 
 const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
   const user = useCurrentUser();
-  return user?.isOAuth && user.role === "ADMIN" ? <Dashboard children={children} /> : redirect("/home");
+
+  console.log(user);
+  return user?.isOAuth && user.role === "ADMIN" ? <Dashboard children={children} /> : redirect("/dashboard");
 };
 
 export default ProtectedLayout;
