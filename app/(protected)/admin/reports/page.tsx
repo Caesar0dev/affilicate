@@ -38,8 +38,8 @@ const Creatives = async () => {
           <p>Export referrals to a CSV file.</p>
           <div className="flex flex-row space-x-4">
             <Input placeholder="Affiliate name" />
-            <Input placeholder="Affiliate name" />
-            <Input placeholder="Affiliate name" />
+            <Input placeholder="Affiliate name" type="date" />
+            <Input placeholder="Affiliate name" type="date" />
             <Select>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Processing" />
