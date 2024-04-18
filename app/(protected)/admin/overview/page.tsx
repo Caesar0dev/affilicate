@@ -10,8 +10,8 @@ const Creatives = async () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6">
         <div className="flex flex-col">
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1" defaultValue="item-1">
+          <Accordion type="single" collapsible defaultValue="item-1">
+            <AccordionItem value="item-1">
               <AccordionTrigger>
                 <h6>Totals</h6>
               </AccordionTrigger>
