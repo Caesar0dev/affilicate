@@ -20,23 +20,19 @@ const Creatives = async () => {
 
           <div>
             <h6>Recent Referrals</h6>
-            <div className="p-4">
-              <div>Table 1</div>
-            </div>
+            <div className="p-4">Table</div>
           </div>
 
           <div>
             <h6>Latest Affiliate Registrations</h6>
-            <div className="p-4">
-              <div>Table 1</div>
-            </div>
+            <div className="p-4">Table</div>
           </div>
         </div>
 
         <div>
           <div>
             <h6>Latest Affiliate Registrations</h6>
-            <div className="p-4">Table 1</div>
+            <div className="p-4">Table</div>
           </div>
 
           <div>

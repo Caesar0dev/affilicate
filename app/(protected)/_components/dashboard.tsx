@@ -130,6 +130,11 @@ export const Dashboard = ({ children }: ProtectedLayoutProps) => {
             icon: <DashboardIcon />
           },
           {
+            path: "/admin/overview",
+            title: "Overview",
+            icon: <DashboardIcon />
+          },
+          {
             path: "/admin/settings",
             title: "Settings",
             icon: <DashboardIcon />
