@@ -17,7 +17,6 @@ export default function DashboardTable({ data }: { data: DashboardType[] }) {
           <TableHead>Dashboard method</TableHead>
           <TableHead>Dashboard account</TableHead>
           <TableHead>Status</TableHead>
-          <TableHead>Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
