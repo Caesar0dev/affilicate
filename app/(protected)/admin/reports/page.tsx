@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectValue, SelectItem, SelectContent } from "@/components/ui/select";
+import DatePicker from "@/components/ui/datePicker";
 import { currentUser } from "@/lib/auth";
 
 const Creatives = async () => {
@@ -36,12 +37,12 @@ const Creatives = async () => {
         <div>
           <h6>Export Referrals</h6>
           <p className="text-sm !mt-6">Export referrals to a CSV file.</p>
-          <div className="flex flex-row space-x-4">
+          <div className="grid grid-cols-4 gap-x-4">
             <Input placeholder="Affiliate name" />
-            <Input placeholder="Affiliate name" type="date" />
-            <Input placeholder="Affiliate name" type="date" />
+            <DatePicker />
+            <DatePicker />
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger>
                 <SelectValue placeholder="Processing" />
               </SelectTrigger>
               <SelectContent>
