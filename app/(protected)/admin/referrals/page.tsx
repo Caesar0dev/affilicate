@@ -1,6 +1,20 @@
 import { currentUser } from "@/lib/auth";
 import ReferralsTable from "@/components/admin/referrals/ReferralTable";
 
+const data = [
+  {
+    id: "ID",
+    amount: 291,
+    affiliate: "affiliate ads ",
+    reference: "reference table",
+    description: "desc",
+    type: "type of ",
+    date: new Date(),
+    actions: "Action",
+    status: false
+  }
+];
+
 const Referrals = async () => {
   const user = await currentUser();
 
@@ -9,7 +23,7 @@ const Referrals = async () => {
       <div className="text-2xl font-bold">Referrals</div>
 
       <div>
-        <div>No admin Refferals found.</div>
+        <ReferralsTable data={data} />
       </div>
     </div>
   );
