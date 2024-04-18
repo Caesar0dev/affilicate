@@ -157,6 +157,17 @@ const Creatives = async () => {
             </Button>
           </div>
         </div>
+
+        <div>
+          <h6>Import Referrals</h6>
+          <p className="text-sm !mt-6">Import a CSV of referral records.</p>
+          <Input type="file" className="w-40" />
+          <div>
+            <Button variant="outline" size="sm">
+              Import CSV
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
