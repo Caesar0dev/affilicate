@@ -90,6 +90,35 @@ const Creatives = async () => {
             </Button>
           </div>
         </div>
+
+        <div>
+          <h6>Export Visits</h6>
+          <p className="text-sm !mt-6">Export visits to a CSV file.</p>
+          <div className="flex flex-row space-x-4">
+            <Input placeholder="Affiliate name" />
+            <Input placeholder="Affiliate name" type="date" />
+            <Input placeholder="Affiliate name" type="date" />
+            <Select>
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Processing" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="processing">Processing</SelectItem>
+                <SelectItem value="paid">Paid</SelectItem>
+                <SelectItem value="failed">Failed</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <p>
+            To search for an affiliate, enter the affiliate’s login name, first name, or last name. Leave blank to
+            export visits for all affiliates.
+          </p>
+          <div>
+            <Button variant="outline" size="sm">
+              Export
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
