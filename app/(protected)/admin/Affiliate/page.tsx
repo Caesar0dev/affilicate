@@ -18,12 +18,12 @@ const data = [
   }
 ];
 
-const Creatives = async () => {
+const Affiliate = async () => {
   const user = await currentUser();
 
   return (
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
-      <div className="text-2xl font-bold">admin affiliate</div>
+      <div className="text-2xl font-bold">Admin Affiliate</div>
       <div className="space-x-2">
         <Button>Add new</Button>
         <Button>Manage group</Button>
@@ -38,4 +38,4 @@ const Creatives = async () => {
   );
 };
 
-export default Creatives;
+export default Affiliate;

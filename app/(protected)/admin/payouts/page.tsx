@@ -16,7 +16,7 @@ const data = [
   }
 ];
 
-const Creatives = async () => {
+const Payout = async () => {
   const user = await currentUser();
 
   return (
@@ -30,4 +30,4 @@ const Creatives = async () => {
   );
 };
 
-export default Creatives;
+export default Payout;
