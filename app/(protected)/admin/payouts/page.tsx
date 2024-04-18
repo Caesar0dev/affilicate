@@ -1,5 +1,5 @@
 import { currentUser } from "@/lib/auth";
-import PayoutTable from "@/components/admin/payout/Table";
+import PayoutTable from "@/components/admin/payout/PayoutTable";
 
 const data = [
   {
