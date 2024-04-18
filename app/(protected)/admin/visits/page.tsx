@@ -14,12 +14,12 @@ const data = [
   }
 ];
 
-const Creatives = async () => {
+const AdminVisits = async () => {
   const user = await currentUser();
 
   return (
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
-      <div className="text-2xl font-bold">admin visits</div>
+      <div className="text-2xl font-bold">Admin Visits</div>
 
       <div>
         <VisitTable data={data} />
@@ -28,4 +28,4 @@ const Creatives = async () => {
   );
 };
 
-export default Creatives;
+export default AdminVisits;
