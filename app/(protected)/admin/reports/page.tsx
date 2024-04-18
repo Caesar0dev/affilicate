@@ -1,4 +1,4 @@
-import { Select } from "@/components/ui/select";
+import { Select, SelectTrigger, SelectValue, SelectItem, SelectContent } from "@/components/ui/select";
 import { currentUser } from "@/lib/auth";
 
 const Creatives = async () => {
