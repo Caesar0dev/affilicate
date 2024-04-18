@@ -1,4 +1,5 @@
 import { currentUser } from "@/lib/auth";
+import ReferralsTable from "@/components/admin/referrals/ReferralTable";
 
 const Referrals = async () => {
   const user = await currentUser();
