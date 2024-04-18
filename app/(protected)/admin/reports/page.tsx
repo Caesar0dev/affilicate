@@ -10,7 +10,7 @@ const Creatives = async () => {
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">Reports</div>
 
-      <div className="space-y-10 [&>div]:p-4 [&>div]:border [&>div]:space-y-2">
+      <div className="space-y-10 [&>div]:p-4 [&>div]:border [&>div]:space-y-2 [&>div]:shadow-md">
         <div>
           <h6 className="font-medium">Export Affiliate</h6>
           <p className="text-sm !mt-6">Export affiliates to a CSV file.</p>
