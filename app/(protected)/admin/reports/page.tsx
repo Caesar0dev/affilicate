@@ -66,12 +66,12 @@ const Creatives = async () => {
         <div>
           <h6>Export Payouts</h6>
           <p className="text-sm !mt-6">Export payouts to a CSV file.</p>
-          <div className="flex flex-row space-x-4">
+          <div className="grid grid-cols-4 gap-x-4">
             <Input placeholder="Affiliate name" />
-            <Input placeholder="Affiliate name" type="date" />
-            <Input placeholder="Affiliate name" type="date" />
+            <DatePicker />
+            <DatePicker />
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger>
                 <SelectValue placeholder="Processing" />
               </SelectTrigger>
               <SelectContent>
@@ -95,12 +95,12 @@ const Creatives = async () => {
         <div>
           <h6>Export Visits</h6>
           <p className="text-sm !mt-6">Export visits to a CSV file.</p>
-          <div className="flex flex-row space-x-4">
+          <div className="grid grid-cols-4 gap-x-4">
             <Input placeholder="Affiliate name" />
-            <Input placeholder="Affiliate name" type="date" />
-            <Input placeholder="Affiliate name" type="date" />
+            <DatePicker />
+            <DatePicker />
             <Select>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger>
                 <SelectValue placeholder="Processing" />
               </SelectTrigger>
               <SelectContent>
