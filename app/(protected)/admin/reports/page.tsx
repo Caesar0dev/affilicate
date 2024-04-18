@@ -141,7 +141,7 @@ const Creatives = async () => {
             Import the AffiliateWP settings from a .json file. This file can be obtained by exporting the settings on
             another site using the form above.
           </p>
-          <Input type="file" className="w-40" />
+          <FileUpload />
           <div>
             <Button variant="outline" size="sm">
               Import
@@ -152,7 +152,7 @@ const Creatives = async () => {
         <div>
           <h6>Import Affiliates</h6>
           <p className="text-sm !mt-6">Import a CSV of affiliate records.</p>
-          <Input type="file" className="w-40" />
+          <FileUpload />
           <div>
             <Button variant="outline" size="sm">
               Import CSV

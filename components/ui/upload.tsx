@@ -4,7 +4,10 @@ function FileUpload({ className }: { className?: String }) {
   return (
     <label
       htmlFor="uploadFile"
-      className="bg-gray-300 hover:bg-gray-300 text-black text-sm px-4 py-2.5 outline-none rounded w-max cursor-pointer block font-[sans-serif]"
+      className={cn(
+        "bg-gray-50 hover:bg-slate-200 text-black text-sm px-4 py-2.5 outline-none rounded w-max cursor-pointer block font-[sans-serif] border",
+        className
+      )}
     >
       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 mr-2 fill-black inline" viewBox="0 0 32 32">
         <path
