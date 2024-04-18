@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Select, SelectTrigger, SelectValue, SelectItem, SelectContent } from "@/components/ui/select";
 import { currentUser } from "@/lib/auth";
 
@@ -9,26 +10,28 @@ const Creatives = async () => {
       <div className="text-2xl font-bold">Reports</div>
 
       <div className="space-y-6">
-        <div>
-          <h1>Export Affiliate</h1>
-          <p>Export affiliates to a CSV file.</p>
+        <div className="p-4 border space-y-2">
+          <h6 className="font-medium">Export Affiliate</h6>
+          <p className="text-sm !mt-6">Export affiliates to a CSV file.</p>
           <Select>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Today" />
+              <SelectValue placeholder="All Statuses" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="today">Today</SelectItem>
-              <SelectItem value="yesterday">Yesterday</SelectItem>
-              <SelectItem value="thisweek">This Week</SelectItem>
-              <SelectItem value="lastweek">Last Week</SelectItem>
-              <SelectItem value="thismonth">This Month</SelectItem>
-              <SelectItem value="lastmonth">Last Month</SelectItem>
-              <SelectItem value="thisquarter">This Quarter</SelectItem>
-              <SelectItem value="lastquarter">Last Quarter</SelectItem>
-              <SelectItem value="thisyear">This Year</SelectItem>
-              <SelectItem value="lastyear">Last Year</SelectItem>
+              <SelectItem value="all">All Statuses</SelectItem>
+              <SelectItem value="active">Active</SelectItem>
+              <SelectItem value="inactive">Inactive</SelectItem>
+              <SelectItem value="pending">Pending</SelectItem>
+              <SelectItem value="rejected">Rejected</SelectItem>
             </SelectContent>
           </Select>
+          <div>
+            <Button variant="outline">Export</Button>
+          </div>
+        </div>
+
+        <div>
+          <h6></h6>
         </div>
       </div>
     </div>
