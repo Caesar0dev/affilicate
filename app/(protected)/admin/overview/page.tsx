@@ -10,15 +10,17 @@ const Creatives = async () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6">
         <div className="flex flex-col">
-          <Accordion>
-            <AccordionTrigger>
-              <h6>Totals</h6>
-            </AccordionTrigger>
-            <div className="space-y-4 p-4">
-              <div>Table 1</div>
-              <div>Table 2</div>
-              <div>Table 3</div>
-            </div>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1" defaultValue="item-1">
+              <AccordionTrigger>
+                <h6>Totals</h6>
+              </AccordionTrigger>
+              <AccordionContent className="space-y-4 p-4">
+                <div>Table 1</div>
+                <div>Table 2</div>
+                <div>Table 3</div>
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
 
           <div>
