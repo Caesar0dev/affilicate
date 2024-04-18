@@ -1,6 +1,7 @@
 import { currentUser } from "@/lib/auth";
+import VisitTable from "@/components/admin/visits/VisitsTable";
 
-const creatives = [
+const data = [
   {
     url: "http://localhost",
     ref: "reference url",
@@ -17,7 +18,7 @@ const Creatives = async () => {
       <div className="text-2xl font-bold">admin visits</div>
 
       <div>
-        <div>No admin visits found.</div>
+        <VisitTable data={data} />
       </div>
     </div>
   );
