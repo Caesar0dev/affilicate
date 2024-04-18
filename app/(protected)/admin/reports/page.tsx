@@ -132,6 +132,20 @@ const Creatives = async () => {
             </Button>
           </div>
         </div>
+
+        <div>
+          <h6>Import Settings</h6>
+          <p className="text-sm !mt-6">
+            Import the AffiliateWP settings from a .json file. This file can be obtained by exporting the settings on
+            another site using the form above.
+          </p>
+          <Input type="file" className="w-40" />
+          <div>
+            <Button variant="outline" size="sm">
+              Import
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
