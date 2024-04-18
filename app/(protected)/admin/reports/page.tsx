@@ -36,7 +36,7 @@ const Creatives = async () => {
         <div>
           <h6>Export Referrals</h6>
           <p>Export referrals to a CSV file.</p>
-          <div className="space-x-4">
+          <div className="flex flex-row space-x-4">
             <Input placeholder="Affiliate name" />
             <Input placeholder="Affiliate name" />
             <Input placeholder="Affiliate name" />
