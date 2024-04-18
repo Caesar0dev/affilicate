@@ -12,7 +12,7 @@ interface CreativeType {
 
 export default function CreativeTable({ data }: { data: CreativeType[] }) {
   return (
-    <Table className="rounded-md overflow-hidden">
+    <Table className="rounded-md overflow-hidden shadow-sm">
       <TableHeader className="bg-gray-50 shadow-md">
         <TableRow>
           <TableHead>Name</TableHead>
@@ -27,8 +27,7 @@ export default function CreativeTable({ data }: { data: CreativeType[] }) {
       <TableBody>
         {data.map((row: CreativeType, i: number) => (
           <TableRow key={i}>
-            <TableCell className="font-medium">{row.id}</TableCell>
-            <TableCell>{row.name}</TableCell>
+            <TableCell className="font-medium">{row.name}</TableCell>
             <TableCell>{row.id}</TableCell>
             <TableCell>{row.type}</TableCell>
             <TableCell>{row.url}</TableCell>

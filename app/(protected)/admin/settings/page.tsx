@@ -16,7 +16,7 @@ const Setting = async () => {
           </div>
           <div className="col-span-3">
             <div className="flex flex-row space-x-2">
-              <Input />
+              <Input className="w-60" />
               <Button>Deactivate License</Button>
               <span className="text-xs "> Your license is valid!</span>
             </div>
