@@ -3,9 +3,13 @@ import VisitTable from "@/components/admin/visits/VisitsTable";
 
 const data = [
   {
-    url: "http://localhost",
-    ref: "reference url",
-    convert: "convert",
+    id: "String",
+    landing: "Landing",
+    url: "https://gooogle.co,",
+    ip: "192.168.120.12",
+    converted: "Convert",
+    refId: "reference",
+    affiliate: "affiliate",
     date: new Date()
   }
 ];
