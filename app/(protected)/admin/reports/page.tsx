@@ -10,7 +10,7 @@ const Creatives = async () => {
     <div className="space-y-10 w-full py-8 px-4 md:px-6">
       <div className="text-2xl font-bold">Reports</div>
 
-      <div className="space-y-6 [&>div]:p-4 [&>div]:border [&>div]:space-y-2">
+      <div className="space-y-10 [&>div]:p-4 [&>div]:border [&>div]:space-y-2">
         <div>
           <h6 className="font-medium">Export Affiliate</h6>
           <p className="text-sm !mt-6">Export affiliates to a CSV file.</p>
@@ -35,7 +35,36 @@ const Creatives = async () => {
 
         <div>
           <h6>Export Referrals</h6>
-          <p>Export referrals to a CSV file.</p>
+          <p className="text-sm !mt-6">Export referrals to a CSV file.</p>
+          <div className="flex flex-row space-x-4">
+            <Input placeholder="Affiliate name" />
+            <Input placeholder="Affiliate name" type="date" />
+            <Input placeholder="Affiliate name" type="date" />
+            <Select>
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Processing" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="processing">Processing</SelectItem>
+                <SelectItem value="paid">Paid</SelectItem>
+                <SelectItem value="failed">Failed</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <p>
+            To search for an affiliate, enter the affiliate's login name, first name, or last name. Leave blank to
+            export payouts for all affiliates.
+          </p>
+          <div>
+            <Button variant="outline" size="sm">
+              Export
+            </Button>
+          </div>
+        </div>
+
+        <div>
+          <h6>Export Payouts</h6>
+          <p className="text-sm !mt-6">Export payouts to a CSV file.</p>
           <div className="flex flex-row space-x-4">
             <Input placeholder="Affiliate name" />
             <Input placeholder="Affiliate name" type="date" />
