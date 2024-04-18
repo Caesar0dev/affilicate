@@ -9,11 +9,41 @@ const Creatives = async () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6">
         <div className="flex flex-col">
-          <h6>total</h6>
-          <div></div>
+          <div>
+            <h6>Totals</h6>
+            <div className="space-y-4 p-4">
+              <div>Table 1</div>
+              <div>Table 2</div>
+              <div>Table 3</div>
+            </div>
+          </div>
+
+          <div>
+            <h6>Recent Referrals</h6>
+            <div className="p-4">
+              <div>Table 1</div>
+            </div>
+          </div>
+
+          <div>
+            <h6>Latest Affiliate Registrations</h6>
+            <div className="p-4">
+              <div>Table 1</div>
+            </div>
+          </div>
         </div>
 
-        <div></div>
+        <div>
+          <div>
+            <h6>Latest Affiliate Registrations</h6>
+            <div className="p-4">Table 1</div>
+          </div>
+
+          <div>
+            <h6>Latest Affiliate Registrations</h6>
+            <div className="p-4">Table</div>
+          </div>
+        </div>
       </div>
     </div>
   );
