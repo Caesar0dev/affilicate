@@ -9,11 +9,11 @@ const Creatives = async () => {
       <div className="text-2xl font-bold">Overview</div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6">
-        <div className="flex flex-col">
-          <Accordion type="single" collapsible defaultValue="item-1">
+        <div className="space-y-8">
+          <Accordion type="single" collapsible defaultValue="item-1" className="border shadow-md">
             <AccordionItem value="item-1">
-              <AccordionTrigger>
-                <h6>Totals</h6>
+              <AccordionTrigger className="px-4 border-b">
+                <h6 className="text-lg">Totals</h6>
               </AccordionTrigger>
               <AccordionContent className="space-y-4 p-4">
                 <div>Table 1</div>
@@ -23,32 +23,62 @@ const Creatives = async () => {
             </AccordionItem>
           </Accordion>
 
-          <div>
-            <h6>Recent Referrals</h6>
-            <div className="p-4">Table</div>
-          </div>
+          <Accordion type="single" collapsible defaultValue="item-2" className="border shadow-md">
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="px-4 border-b">
+                <h6 className="text-lg">Recent Referrals</h6>
+              </AccordionTrigger>
+              <AccordionContent className="space-y-4 p-4">
+                <div>Table</div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
-          <div>
-            <h6>Latest Affiliate Registrations</h6>
-            <div className="p-4">Table</div>
-          </div>
+          <Accordion type="single" collapsible defaultValue="item-2" className="border shadow-md">
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="px-4 border-b">
+                <h6 className="text-lg">Latest Affiliate Registrations</h6>
+              </AccordionTrigger>
+              <AccordionContent className="space-y-4 p-4">
+                <div>Table</div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
 
-        <div>
-          <div>
-            <h6>Most valuable Affiliate</h6>
-            <div className="p-4">Table</div>
-          </div>
+        <div className="space-y-6">
+          <Accordion type="single" collapsible defaultValue="item-2" className="border shadow-md">
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="px-4 border-b">
+                <h6 className="text-lg">Most valuable Affiliate</h6>
+              </AccordionTrigger>
+              <AccordionContent className="space-y-4 p-4">
+                <div>Table</div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
-          <div>
-            <h6>Recent Referral Visits</h6>
-            <div className="p-4">Table</div>
-          </div>
+          <Accordion type="single" collapsible defaultValue="item-2" className="border shadow-md">
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="px-4 border-b">
+                <h6 className="text-lg">Recent Referral Visits</h6>
+              </AccordionTrigger>
+              <AccordionContent className="space-y-4 p-4">
+                <div>Table</div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
-          <div>
-            <h6>Highest Convert URLs</h6>
-            <div className="p-4">Table</div>
-          </div>
+          <Accordion type="single" collapsible defaultValue="item-2" className="border shadow-md">
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="px-4 border-b">
+                <h6 className="text-lg">Highest Convert URLs</h6>
+              </AccordionTrigger>
+              <AccordionContent className="space-y-4 p-4">
+                <div>Table</div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
     </div>
