@@ -1,5 +1,5 @@
 import { currentUser } from "@/lib/auth";
-import AffiliateTable from "@/components/admin/affiliate/Table";
+import AffiliateTable from "@/components/admin/affiliate/AffiliateTable";
 import { Button } from "@/components/ui/button";
 
 const data = [
