@@ -1,15 +1,6 @@
 import { currentUser } from "@/lib/auth";
 
-const creatives = [
-  {
-    url: "http://localhost",
-    ref: "reference url",
-    convert: "convert",
-    date: new Date()
-  }
-];
-
-const Creatives = async () => {
+const Admin = async () => {
   const user = await currentUser();
 
   return (
@@ -19,4 +10,4 @@ const Creatives = async () => {
   );
 };
 
-export default Creatives;
+export default Admin;
