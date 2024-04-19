@@ -101,7 +101,7 @@ const ServerPage = async () => {
 
   return (
     <div className="space-y-10 py-8 px-4 md:px-6">
-      <div className="text-2xl font-bold">Welcome Andrew</div>
+      <div className="text-2xl font-bold">Welcome {user.name}</div>
 
       <div className="space-y-2">
         <div className="font-bold text-xl">Last 30 days</div>
