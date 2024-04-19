@@ -6,7 +6,7 @@ const data = [
     id: "String",
     landing: "Landing",
     url: "https://gooogle.co,",
-    ip: "192.168.120.12",
+    ip: "1.2.3.4",
     converted: "Convert",
     refId: "reference",
     affiliate: "affiliate",
